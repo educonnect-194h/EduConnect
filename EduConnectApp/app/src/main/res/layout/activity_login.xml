@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.687"
-        android:background="@drawable/layer_list"
+        android:background="@drawable/layer_list_light"
         style="@style/get_connected"/>
 
     <Button
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.843"
-        android:background="@drawable/layer_list"
+        android:background="@drawable/layer_list_light"
         style="@style/get_connected"/>
 
 </android.support.constraint.ConstraintLayout>
