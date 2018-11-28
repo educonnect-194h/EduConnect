@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Text style for "get_connec" -->
+    <!-- Add this snippet to styles.xml. -->
+    <style name="get_connec">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">Get Connected! (teacher)</item>
+    </style>
+
 </resources>
