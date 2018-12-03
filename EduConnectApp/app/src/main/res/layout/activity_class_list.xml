@@ -41,9 +41,9 @@
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
                 android:text="P1: Algebra II"
+                android:onClick="onPeriodOneClick"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"
-                android:onClick="hi"/>
+                android:textColor="#fff"/>
 
             <!-- P2 Button -->
             <Button

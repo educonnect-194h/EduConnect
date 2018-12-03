@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".StudentDashboardActivity" />
-        <activity android:name=".ClassList"></activity>
+        <activity android:name=".ClassList" />
+        <activity android:name=".ClassListActivity"></activity>
     </application>
 
 </manifest>

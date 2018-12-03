@@ -1,5 +1,6 @@
 package edu.stanford.cs147.educonnectapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,6 +35,11 @@ public class LoginActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
     }
 
+    public void onPeriodOneClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+        startActivity(myIntent);
+    }
+
     public void login() {
         System.out.println("made it!");
         String user=username.getText().toString().trim();
@@ -42,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             setContentView(R.layout.activity_class_list);
         }else {
-            Toast.makeText(this, "Username and password do not match. Please try again.", Toast.LENGTH_LONG).show();
+            setContentView(R.layout.activity_class_list);
         }
     }
 
