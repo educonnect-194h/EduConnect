@@ -6,8 +6,8 @@
     <!-- Add this snippet to layer-list xml in drawable. -->
     <item android:width="295dp" android:height="47dp">
         <shape android:shape="rectangle">
-            <corners android:radius="10dp" />
-            <solid android:color="#320A28" />
+            <corners android:radius="3dip" />
+            <solid android:color="#003320" />
         </shape>
     </item>
 </selector>

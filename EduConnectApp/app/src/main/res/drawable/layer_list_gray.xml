@@ -6,7 +6,7 @@
     <!-- Add this snippet to layer-list xml in drawable. -->
     <item android:width="295dp" android:height="47dp">
         <shape android:shape="rectangle">
-            <corners android:radius="10dp" />
+            <corners android:radius="3dip" />
             <solid android:color="#D8D8D8" />
         </shape>
     </item>
