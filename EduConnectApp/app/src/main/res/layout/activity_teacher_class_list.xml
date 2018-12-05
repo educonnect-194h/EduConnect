@@ -41,7 +41,7 @@
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
                 android:text="P1: Algebra II"
-                android:onClick="onPeriodOneClick"
+                android:onClick="onTeacherPeriodOneClick"
                 android:textAlignment="viewStart"
                 android:textColor="#fff"/>
 
@@ -54,9 +54,9 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
-                android:text="P2: Literature"
+                android:text="P2: AP Calculus AB"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
 
             <!-- P3 Button -->
             <Button
@@ -67,9 +67,9 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
-                android:text="P3: AP U.S. History"
+                android:text="P3: AP Calculus BC"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
 
             <!-- P4 Button -->
             <Button
@@ -80,9 +80,9 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
-                android:text="P4: Physics I"
+                android:text="P4: Alegbra II"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
 
             <!-- P5 Button -->
             <Button
@@ -93,9 +93,9 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
-                android:text="P5: French III"
+                android:text="P5: AP Calculus AB"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
 
             <!-- P6 Button -->
             <Button
@@ -106,9 +106,9 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layer_list_light"
                 android:paddingLeft="15dp"
-                android:text="P6: Intro to Ceramics"
+                android:text="P6: AP Calclulus BC"
                 android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
 
             <!-- add, drop, history -->
             <RelativeLayout

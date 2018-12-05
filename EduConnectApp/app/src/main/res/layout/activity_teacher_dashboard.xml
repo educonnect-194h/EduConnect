@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.stanford.cs147.educonnectapp.TeacherDashboardActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/classes_background"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/classLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="P1: Algebra II"
+            android:textColor="#fff" />
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/backArrow"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/classLabel"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginTop="10dp">-->
+
+        <!--<Button-->
+        <!--android:id="@+id/backButton"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:background="@drawable/back_arrow"-->
+        <!--android:backgroundTint="#2e2e2e" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Back"-->
+        <!--android:textColor="#2e2e2e" />-->
+        <!--</LinearLayout>-->
+
+        <!-- FEELINGS BUTTON -->
+
+        <Button
+            android:id="@+id/teacherFeelings"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/dashboard_button_available"
+            android:onClick="onTeacherFeelingsClick"
+            android:text="How are you feeling today?"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/appentry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teacherFeelings"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <!-- CLASS RESULTS BUTTON -->
+
+            <RelativeLayout
+                android:layout_width="179dp"
+                android:layout_height="158dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/classResultsBtn"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/dashboard_button_unavailable"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/class_results"
+                    android:tint="#ffffff"
+                    android:onClick="onClassResultsClick"/>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Class Results"
+                    android:textColor="#2e2e2e"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <!-- MESSAGES BUTTON -->
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/messagesButton2"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/dashboard_button_unavailable"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/messages"
+                    android:tint="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Messages"
+                    android:textColor="#2e2e2e"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/appentry2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appentry"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <!-- ROSTER BUTTON -->
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/rosterButton"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/dashboard_button_unavailable"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/roster"
+                    android:tint="#ffffff" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Roster"
+                    android:textColor="#2e2e2e"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

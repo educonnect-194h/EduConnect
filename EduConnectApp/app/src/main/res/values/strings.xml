@@ -4,4 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_student_dashboard">StudentDashboardActivity</string>
+    <string-array name="text_options_array">
+        <item>because...</item>
+        <item>but...</item>
+        <item>and...</item>
+    </string-array>
 </resources>

@@ -5,5 +5,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SubmissionActivity">
+    <ScrollView android:id="@+id/ScrollViewID"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="340dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/backArrow"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/dashboard_button_available"
+        android:text="submit"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="onStudentSubmitClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEt" />
+
+    <TextView
+        android:id="@+id/classLabel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#320A28"
+        android:gravity="center_horizontal"
+        android:text="P1: Intro to Interface Design"
+        android:textColor="#fff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Today, I feel..."
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classLabel2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="364dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/all_emojis" />
+
+    <Spinner
+        android:id="@+id/spinner_options"
+        android:layout_width="161dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/descriptionEt"
+        android:layout_width="363dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:minLines="2"
+        android:gravity="top|left"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_options" />
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
