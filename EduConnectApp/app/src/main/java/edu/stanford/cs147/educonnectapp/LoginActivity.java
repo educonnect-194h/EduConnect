@@ -23,8 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         studentLogin = (Button) findViewById(R.id.loginButtonStudent);
         username= (EditText) findViewById(R.id.usernameField);
         password= (EditText) findViewById(R.id.passwordField);
-        System.out.println("cool shiz");
-
         studentLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +41,19 @@ public class LoginActivity extends AppCompatActivity {
     // student period one click
     public void onPeriodOneClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onBackClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), ClassList.class);
+        startActivity(myIntent);
+    }
+
+    public void onFeelingsClick(View v) {
+        Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+    }
+    public void onTeacherPeriodOneClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
 

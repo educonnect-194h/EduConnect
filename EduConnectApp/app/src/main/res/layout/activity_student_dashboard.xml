@@ -59,7 +59,8 @@
                 android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:background="@drawable/dashboard_button_available"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:onClick="onFeelingsClick"/>
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/appentry"

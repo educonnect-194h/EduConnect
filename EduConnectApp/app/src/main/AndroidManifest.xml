@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".StudentDashboardActivity" />
         <activity android:name=".ClassList" />
-        <activity android:name=".ClassListActivity" />
+        <activity android:name=".SubmissionActivity"></activity>
+        <activity android:name=".SubmittedActivity"></activity>
         <activity android:name=".TeacherClassListAcitivty" />
         <activity android:name=".TeacherDashboardActivity" />
         <activity android:name=".ClassResultsActivity" />
