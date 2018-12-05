@@ -13,74 +13,70 @@
         android:orientation="vertical"
         android:background="@drawable/login_background">
 
-        <!-- Welcome to... -->
-        <TextView
-            android:id="@+id/message"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:textAlignment="textStart"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Welcome to"
-            android:textSize="22sp"
-            android:textColor="#fff"/>
+            android:background="@drawable/login_modal"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <!-- EduConnect Logo -->
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/educonnect"
-            android:layout_marginBottom="40dp"
-            android:tint="#fff"/>
+            <!-- Welcome to... -->
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textAlignment="textStart"
+                android:layout_marginLeft="20dp"
+                android:text="Welcome to"
+                android:textSize="22sp"
+                android:textColor="#000"/>
 
-        <!-- Username -->
-        <EditText
-            android:id="@+id/usernameField"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:background="#d8d8d8"
-            android:ems="10"
-            android:hint=" Username"
-            android:inputType="textEmailAddress"
-            android:textColorHint="#9c9c9c"
-            android:layout_gravity="center_horizontal" />
+            <!-- EduConnect Logo -->
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/new_logo"
+                android:layout_marginBottom="40dp"/>
 
-        <!-- Password -->
-        <EditText
-            android:id="@+id/passwordField"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginBottom="20dp"
-            android:background="#d8d8d8"
-            android:ems="10"
-            android:hint=" Password"
-            android:inputType="textPassword"
-            android:textColorHint="#9c9c9c"
-            android:layout_gravity="center_horizontal" />
+            <!-- Username -->
+            <EditText
+                android:id="@+id/usernameField"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="#d8d8d8"
+                android:ems="10"
+                android:hint=" Username"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#9c9c9c"
+                android:layout_gravity="center_horizontal" />
 
+            <!-- Password -->
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="#d8d8d8"
+                android:ems="10"
+                android:hint=" Password"
+                android:inputType="textPassword"
+                android:textColorHint="#9c9c9c"
+                android:layout_gravity="center_horizontal" />
 
-        <Button
-            android:id="@+id/loginButtonTeacher"
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Get Connected (Teacher)"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/login_button"
-            style="@style/get_connected"/>
+            <Button
+                android:id="@+id/loginButtonStudent"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:text="Get Connected"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/login_button"
+                android:layout_marginBottom="8dp"
+                style="@style/get_connected"/>
 
-        <Button
-            android:id="@+id/loginButtonStudent"
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-            android:text="Get Connected (Student)"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/login_button"
-            style="@style/get_connected"/>
+        </LinearLayout>
 
     </LinearLayout>
 
