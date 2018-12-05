@@ -5,20 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ClassListActivity extends AppCompatActivity {
+public class TeacherClassListAcitivty extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_list2);
-
-
+        setContentView(R.layout.activity_teacher_class_list);
     }
 
-    public void onPeriodOneClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+    public void onTeacherPeriodOneClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
-
-
 }

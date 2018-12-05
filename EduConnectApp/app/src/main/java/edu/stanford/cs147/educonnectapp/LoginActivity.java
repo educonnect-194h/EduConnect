@@ -35,8 +35,19 @@ public class LoginActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
     }
 
+    public void onTeacherLoginClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherClassListAcitivty.class);
+        startActivity(myIntent);
+    }
+
+    // student period one click
     public void onPeriodOneClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onTeacherPeriodOneClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
 
