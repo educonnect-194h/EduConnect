@@ -53,7 +53,38 @@ public class LoginActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
         startActivity(myIntent);
     }
+
+    public void onTeacherFeelingsClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherSubmissionActivity.class);
+        startActivity(myIntent);
+    }
+
     public void onTeacherPeriodOneClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onStudentSubmitClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), SubmittedActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onTeacherSubmitClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onClassResultsClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onRedFlagsClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onBackToDashClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
