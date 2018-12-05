@@ -1,13 +1,18 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class SubmissionActivity extends AppCompatActivity {
+
+    Button emoji;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +29,9 @@ public class SubmissionActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
     }
 
-    public void onFeelingsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+    public void onSubmitClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), SubmittedActivity.class);
         startActivity(myIntent);
     }
+    
 }

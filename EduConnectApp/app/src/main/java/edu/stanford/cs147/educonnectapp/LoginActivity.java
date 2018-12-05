@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onFeelingsClick(View v) {
         Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+        startActivity(myIntent);
     }
     public void onTeacherPeriodOneClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);

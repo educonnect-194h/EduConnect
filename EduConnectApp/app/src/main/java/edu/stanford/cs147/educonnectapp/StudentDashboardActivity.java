@@ -22,4 +22,5 @@ public class StudentDashboardActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
         startActivity(myIntent);
     }
+
 }
