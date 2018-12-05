@@ -46,11 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void onTeacherPeriodOneClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
-        startActivity(myIntent);
-    }
-
     public void login() {
         System.out.println("made it!");
         String user=username.getText().toString().trim();

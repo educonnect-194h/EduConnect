@@ -22,7 +22,10 @@
         <activity android:name=".ClassList" />
         <activity android:name=".ClassListActivity" />
         <activity android:name=".TeacherClassListAcitivty" />
-        <activity android:name=".TeacherDashboardActivity"></activity>
+        <activity android:name=".TeacherDashboardActivity" />
+        <activity android:name=".ClassResultsActivity" />
+        <activity android:name=".RedFlagsActivity" />
+        <activity android:name=".TeacherSubmissionActivity"></activity>
     </application>
 
 </manifest>
