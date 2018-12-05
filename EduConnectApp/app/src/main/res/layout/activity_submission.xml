@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SubmissionActivity">
+    <ScrollView android:id="@+id/ScrollViewID"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
 
     <Button
         android:id="@+id/submitBtn"
@@ -72,14 +75,16 @@
         app:srcCompat="@drawable/all_emojis" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="110dp"
+        android:id="@+id/spinner_options"
+        android:layout_width="161dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:layout_editor_absoluteX="10dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/descriptionEt"
@@ -99,6 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_options" />
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

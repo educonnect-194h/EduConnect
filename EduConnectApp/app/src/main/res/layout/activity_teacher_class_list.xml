@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.stanford.cs147.educonnectapp.ClassList">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/classes_background">
+
+        <!-- Status Bar Label -->
+        <TextView
+            android:id="@+id/classLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Classes"
+            android:padding="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_horizontal"
+            android:textColor="#fff"/>
+
+        <LinearLayout
+            android:layout_below="@+id/classLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp">
+
+            <!-- P1 Button -->
+            <Button
+                android:id="@+id/periodOne"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P1: Algebra II"
+                android:onClick="onTeacherPeriodOneClick"
+                android:textAlignment="viewStart"
+                android:textColor="#fff"/>
+
+            <!-- P2 Button -->
+            <Button
+                android:id="@+id/periodTwo"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P2: AP Calculus AB"
+                android:textAlignment="viewStart"
+                android:textColor="#fff" />
+
+            <!-- P3 Button -->
+            <Button
+                android:id="@+id/periodThree"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P3: AP Calculus BC"
+                android:textAlignment="viewStart"
+                android:textColor="#fff" />
+
+            <!-- P4 Button -->
+            <Button
+                android:id="@+id/periodFour"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P4: Alegbra II"
+                android:textAlignment="viewStart"
+                android:textColor="#fff" />
+
+            <!-- P5 Button -->
+            <Button
+                android:id="@+id/periodFive"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P5: AP Calculus AB"
+                android:textAlignment="viewStart"
+                android:textColor="#fff" />
+
+            <!-- P6 Button -->
+            <Button
+                android:id="@+id/periodSix"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layer_list_light"
+                android:paddingLeft="15dp"
+                android:text="P6: AP Calclulus BC"
+                android:textAlignment="viewStart"
+                android:textColor="#fff" />
+
+            <!-- add, drop, history -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <LinearLayout
+                        android:id="@+id/addClassWrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="15dp">
+
+                        <ImageButton
+                            android:id="@+id/addClassButton"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_button"
+                            android:src="@drawable/add"
+                            android:tint="#fff"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Class"
+                            android:layout_gravity="center"
+                            android:textColor="#fff"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/deleteClassWrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/addClassWrapper"
+                        android:layout_marginRight="10dp">
+
+                        <ImageButton
+                            android:id="@+id/deleteClassButton"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_button"
+                            android:src="@drawable/delete"
+                            android:tint="#fff"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delete Class"
+                            android:layout_gravity="center"
+                            android:textColor="#fff"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/deleteClassWrapper">
+
+                        <ImageButton
+                            android:id="@+id/pastClassesButton"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_button"
+                            android:src="@drawable/past"
+                            android:tint="#fff"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Past Classes"
+                            android:layout_gravity="center"
+                            android:textColor="#fff"/>
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
