@@ -10,7 +10,6 @@
         android:id="@+id/submitBtn"
         android:layout_width="340dp"
         android:layout_height="47dp"
-        android:layout_below="@+id/backArrow"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:layout_marginStart="8dp"
@@ -28,8 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEt"
-        android:onClick="onSubmitClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEt"/>
 
     <TextView
         android:id="@+id/classLabel2"
@@ -96,7 +94,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_options" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/grin_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -106,15 +106,18 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/grinning_emoji_with_smiling_eyes"
+        android:src="@drawable/grinning_emoji_with_smiling_eyes"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.313"
+        android:onClick="onEmojiClick"/>
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/smiley_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -124,15 +127,18 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/slightly_smiling_face_emoji"
+        android:src="@drawable/slightly_smiling_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.303"
+        android:onClick="onEmojiClick"/>
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/relieved_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -142,7 +148,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/relieved_emoji"
+        android:src="@drawable/relieved_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.377"
@@ -150,7 +156,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.303" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/sunglasses_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -158,15 +166,18 @@
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/sunglasses_emoji"
+        android:src="@drawable/sunglasses_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.313"
+        android:onClick="onEmojiClick"/>
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/neutral_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -176,7 +187,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/neutral_face_emoji"
+        android:src="@drawable/neutral_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.653"
@@ -184,7 +195,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.303" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/upsidedown_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -194,15 +207,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/upside_down_face_emoji"
+        android:src="@drawable/upside_down_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.792"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.303"/>
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/sad_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -212,7 +227,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/sad_face_emoji"
+        android:src="@drawable/sad_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.931"
@@ -220,7 +235,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.303" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/angry_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -230,7 +247,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/very_angry_emoji"
+        android:src="@drawable/very_angry_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.931"
@@ -238,7 +255,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.764" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/confused_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -248,7 +267,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/confounded_face_emoji"
+        android:src="@drawable/confounded_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.792"
@@ -256,7 +275,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.764" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/nervous_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -266,7 +287,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/cold_sweat_emoji"
+        android:src="@drawable/cold_sweat_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.653"
@@ -274,7 +295,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.754" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/crying_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -284,7 +307,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/crying_face_emoji"
+        android:src="@drawable/crying_face_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
@@ -292,7 +315,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.764" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/sick_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -302,7 +327,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/sick_emoji"
+        android:src="@drawable/sick_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.377"
@@ -310,7 +335,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.754" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/sleeping_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -318,7 +345,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/sleeping_with_snoring_emoji"
+        android:src="@drawable/sleeping_with_snoring_emoji"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.256"
@@ -326,7 +353,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.754" />
 
-    <Button
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:padding="0dp"
         android:id="@+id/vsad_emoji"
         android:layout_width="45dp"
         android:layout_height="46dp"
@@ -336,7 +365,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/very_sad_emoji_icon_png"
+        android:src="@drawable/very_sad_emoji_icon_png"
         app:layout_constraintBottom_toTopOf="@+id/spinner_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"

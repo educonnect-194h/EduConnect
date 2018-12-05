@@ -8,11 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class SubmissionActivity extends AppCompatActivity {
-
-    Button emoji;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,12 @@ public class SubmissionActivity extends AppCompatActivity {
     public void onStudentSubmitClick(View v){
         Intent myIntent = new Intent(getBaseContext(), SubmittedActivity.class);
         startActivity(myIntent);
+    }
+
+    public void onEmojiClick(View v){
+        ImageButton emojiClicked = findViewById(v.getId());
+        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
+
     }
     
 }
