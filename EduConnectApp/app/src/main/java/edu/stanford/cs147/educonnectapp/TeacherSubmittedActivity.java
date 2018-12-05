@@ -5,16 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ClassResultsActivity extends AppCompatActivity {
+public class TeacherSubmittedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_results);
+        setContentView(R.layout.activity_teacher_submitted);
     }
 
-    public void onRedFlagsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
+    public void onBackToDashClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
+        myIntent.putExtra("Submitted", true);
         startActivity(myIntent);
     }
 }
