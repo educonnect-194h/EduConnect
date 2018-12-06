@@ -63,4 +63,5 @@ public class StudentDashboardActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), ClassList.class);
         startActivity(myIntent);
     }
+
 }

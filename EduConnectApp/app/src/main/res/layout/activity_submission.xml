@@ -305,6 +305,7 @@
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/avenir"/>
 
+
         <!-- submit button -->
         <Button
             android:id="@+id/submitBtn"
