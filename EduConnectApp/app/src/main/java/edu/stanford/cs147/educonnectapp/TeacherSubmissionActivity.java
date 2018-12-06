@@ -21,18 +21,23 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_teacher_submission);
 
-//        Spinner spinner = findViewById(R.id.spinner_options2);
-//        // Create an ArrayAdapter using the string array and a default spinner layout
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.text_options_array, android.R.layout.simple_spinner_item);
-//        // Specify the layout to use when the list of choices appears
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        // Apply the adapter to the spinner
-//        spinner.setAdapter(adapter);
+        Spinner spinner = findViewById(R.id.conjunction_spinner2);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.text_options_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
     }
 
     public void onTeacherSubmitClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
         startActivity(myIntent);
+    }
+
+    public void onEmojiClick(View v){
+        ImageButton emojiClicked = findViewById(v.getId());
+        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
     }
 }

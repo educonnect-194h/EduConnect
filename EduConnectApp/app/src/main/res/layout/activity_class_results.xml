@@ -6,54 +6,208 @@
     android:layout_height="match_parent"
     tools:context=".ClassResultsActivity">
 
-
-    <Button
-        android:id="@+id/moreDetails"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/layer_list_light"
-        android:onClick="onMoreDetailsClick"
-        android:paddingLeft="15dp"
-        android:text="More Details"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="357dp" />
-
-    <Button
-        android:id="@+id/redFlags"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/layer_list_light"
-        android:onClick="onRedFlagsClick"
-        android:paddingLeft="15dp"
-        android:text="Red Flags"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moreDetails" />
-
-    <TextView
-        android:id="@+id/classLabel"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center_horizontal"
-        android:padding="5dp"
-        android:text="P1: Algebra II"
-        android:textColor="#fff" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Algebra II"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="@font/avenir"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dec. 7, 2018"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="@font/avenir"
+            android:gravity="center"
+            android:paddingBottom="10dp" />
+
+
+        <!-- data display options -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="20dp">
+
+            <!-- pie chart -->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/data_option_chosen"
+                android:text="Pie Chart"
+                android:fontFamily="@font/avenir"
+                android:layout_marginRight="1dp"
+                android:textSize="12dp"/>
+
+            <!-- histogram -->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/data_option"
+                android:text="Histogram"
+                android:fontFamily="@font/avenir"
+                android:layout_marginRight="1dp"
+                android:textSize="12dp"/>
+
+            <!-- box & whisker -->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/data_option"
+                android:text="Box Plot"
+                android:fontFamily="@font/avenir"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <!-- Chart -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pie_chart"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"/>
+
+
+        <!-- details section -->
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/appentry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- More Details Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/darkGray"
+                android:textSize="20dp"
+                android:text="More Details"
+                android:fontFamily="@font/avenir"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- FLAGGED STUDENTS -->
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/redFlags"
+                    android:onClick="onRedFlagsClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/class_section"
+                    android:paddingVertical="13dp"
+                    android:paddingLeft="22dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/flag"
+                    android:tint="@color/darkGray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Flagged Students"
+                    android:textColor="@color/darkGray"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="90dp"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/right_arrow"
+                    android:backgroundTint="@color/darkGray"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <!-- DETAILS BUTTON -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/moreDetails"
+                    android:onClick="onMoreDetailsClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/class_section"
+                    android:paddingVertical="13dp"
+                    android:paddingLeft="22dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/file"
+                    android:tint="@color/darkGray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Data Breakdown"
+                    android:textColor="@color/darkGray"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="90dp"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/right_arrow"
+                    android:backgroundTint="@color/darkGray"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

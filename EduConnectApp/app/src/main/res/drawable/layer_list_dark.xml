@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Style for "rectangle" -->
-    <!-- Add this snippet to layer-list xml in drawable. -->
-    <!-- Style for "rectangle" -->
-    <!-- Add this snippet to layer-list xml in drawable. -->
-    <item android:width="295dp" android:height="47dp">
-        <shape android:shape="rectangle">
-            <corners android:radius="3dip" />
-            <solid android:color="#003320" />
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:top="2dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="#bababa"></solid>
+            <corners android:radius="5dip"></corners>
         </shape>
     </item>
-</selector>
+    <item android:top="50dip"  android:bottom="3dp">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle" >
+            <solid android:color="@color/lightGray" />
+            <corners android:bottomLeftRadius="5dip" android:bottomRightRadius="5dip"></corners>
+        </shape>
+    </item>
+    <item android:bottom="35dip" >
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle" >
+            <solid android:color="@color/colorPrimaryDark" />
+            <corners android:topLeftRadius="5dip" android:topRightRadius="5dip"></corners>
+        </shape>
+    </item>
+
+</layer-list>

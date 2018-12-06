@@ -6,56 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".RedFlagsActivity">
 
-
-
-
-    <Button
-        android:id="@+id/sendMessage"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/layer_list_light"
-        android:onClick="onSendMessageClick"
-        android:paddingLeft="15dp"
-        android:text="Send Message"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="357dp" />
-
-    <Button
-        android:id="@+id/seeStudentHistory"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/layer_list_light"
-        android:onClick="onSeeStudentHistoryClick"
-        android:paddingLeft="15dp"
-        android:text="See Student History"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendMessage" />
-
-    <TextView
-        android:id="@+id/classLabel"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center_horizontal"
-        android:padding="5dp"
-        android:text="P1: Algebra II"
-        android:textColor="#fff" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flagged Students"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/darkGray"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/avenir"/>
+
+        <TextView
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 student"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/avenir"/>
+
+        <!-- Flagged Student section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/class_section">
+
+            <!-- student info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="20dp"
+                android:paddingLeft="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/flag"
+                    android:backgroundTint="@color/darkGray"
+                    android:layout_margin="10dp"/>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/jailene"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:layout_height="80dp"
+                    android:text="Based on our metrics, collected data shows that Jailene's responses have been downward trending since Oct. 12, 2018.  Checking in with her would be a good next step."
+                    android:textSize="12dp"
+                    android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+            <!-- action buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
+
+                <!-- SEND MESSAGE -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/sendMessage"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/dashboard_button_available"
+                        android:onClick="onSendMessageClick"
+                        android:src="@drawable/messages"
+                        android:scaleType="fitStart"
+                        android:layout_marginRight="15dp"
+                        android:padding="7dp"
+                        android:tint="@color/background"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send Message"
+                        android:textSize="16dp"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="53dp"
+                        android:textColor="@color/background"/>
+
+                </RelativeLayout>
+
+                <!-- STUDENT HISTORY -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/seeStudentHistory"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/dashboard_button_available"
+                        android:onClick="onSeeStudentHistoryClick"
+                        android:src="@drawable/history"
+                        android:tint="@color/background"
+                        android:scaleType="fitStart"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Student History"
+                        android:textSize="16dp"
+                        android:textColor="@color/background"
+                        android:paddingLeft="53dp"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

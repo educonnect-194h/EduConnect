@@ -9,112 +9,344 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/classes_background">
+        android:background="@color/background">
 
         <!-- Status Bar Label -->
-        <TextView
-            android:id="@+id/classLabel"
+        <RelativeLayout
+            android:id="@+id/statusBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Classes"
-            android:padding="5dp"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center_horizontal"
-            android:textColor="#fff"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logout"
+                    android:tint="#fff"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="logoutStudent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:fontFamily="@font/avenir"
+                    android:textSize="10dp"
+                    android:textColor="@color/background" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Classes"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/darkGray"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="20px"
+            android:fontFamily="@font/avenir"/>
 
         <LinearLayout
-            android:layout_below="@+id/classLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
+            android:layout_below="@+id/title"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <!-- P1 Button -->
-            <Button
-                android:id="@+id/periodOne"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P1: Algebra II"
-                android:onClick="onPeriodOneClick"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+            <!-- P1 & P2 -->
 
-            <!-- P2 Button -->
-            <Button
-                android:id="@+id/periodTwo"
-                android:layout_width="250dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P2: Literature"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:orientation="horizontal">
 
-            <!-- P3 Button -->
-            <Button
-                android:id="@+id/periodThree"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P3: AP U.S. History"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                <!-- P1 Button -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-            <!-- P4 Button -->
-            <Button
-                android:id="@+id/periodFour"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P4: Physics I"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                    <ImageButton
+                        android:id="@+id/periodOne"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/layer_list_light"
+                        android:onClick="onPeriodOneClick"
+                        android:textAlignment="viewStart"
+                        android:paddingLeft="15dp"
+                        android:textColor="#fff"/>
 
-            <!-- P5 Button -->
-            <Button
-                android:id="@+id/periodFive"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P5: French III"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ALGEBRA II"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/avenir"/>
 
-            <!-- P6 Button -->
-            <Button
-                android:id="@+id/periodSix"
-                android:layout_width="250dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period 1"
+                        android:textColor="#2e2e2e"
+                        android:layout_alignBottom="@+id/periodOne"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/avenir"/>
+
+                </RelativeLayout>
+
+
+                <!-- P2 Button -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/periodTwo"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/layer_list_light"
+                        android:textAlignment="viewStart"
+                        android:paddingLeft="15dp"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LITERATURE"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/avenir"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period 2"
+                        android:textColor="#2e2e2e"
+                        android:layout_alignBottom="@+id/periodTwo"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/avenir"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- P3 & P4 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/layer_list_light"
-                android:paddingLeft="15dp"
-                android:text="P6: Intro to Ceramics"
-                android:textAlignment="viewStart"
-                android:textColor="#fff"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <!-- P3 Button -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/periodThree"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/layer_list_light"
+                        android:textAlignment="viewStart"
+                        android:paddingLeft="15dp"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="U.S. HISTORY"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/avenir"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period 3"
+                        android:textColor="#2e2e2e"
+                        android:layout_alignBottom="@+id/periodThree"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/avenir"/>
+
+                </RelativeLayout>
+
+
+                <!-- P4 Button -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/periodFour"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/layer_list_light"
+                        android:textAlignment="viewStart"
+                        android:paddingLeft="15dp"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PHYSICS 1"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/avenir"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period 4"
+                        android:textColor="#2e2e2e"
+                        android:layout_alignBottom="@+id/periodFour"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/avenir"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <!-- P5 & P6 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                    <!-- P5 Button -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp">
+
+                        <ImageButton
+                            android:id="@+id/periodFive"
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="start"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/layer_list_light"
+                            android:textAlignment="viewStart"
+                            android:paddingLeft="15dp"
+                            android:textColor="#fff"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FRENCH III"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="10dp"
+                            android:textSize="35px"
+                            android:fontFamily="@font/avenir"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Period 5"
+                            android:textColor="#2e2e2e"
+                            android:layout_alignBottom="@+id/periodFive"
+                            android:paddingBottom="7dp"
+                            android:paddingLeft="10dp"
+                            android:fontFamily="@font/avenir"/>
+
+                    </RelativeLayout>
+
+
+                    <!-- P6 Button -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/periodSix"
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="start"
+                            android:background="@drawable/layer_list_light"
+                            android:onClick="onPeriodOneClick"
+                            android:textAlignment="viewStart"
+                            android:paddingLeft="15dp"
+                            android:textColor="#fff"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CERAMICS"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="10dp"
+                            android:textSize="35px"
+                            android:fontFamily="@font/avenir"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Period 6"
+                            android:textColor="#2e2e2e"
+                            android:layout_alignBottom="@+id/periodSix"
+                            android:paddingBottom="7dp"
+                            android:paddingLeft="10dp"
+                            android:fontFamily="@font/avenir"/>
+
+                    </RelativeLayout>
+
+            </LinearLayout>
 
             <!-- add, drop, history -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="15dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -125,28 +357,30 @@
                         android:id="@+id/addClassWrapper"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="15dp"
+                        android:orientation="vertical">
 
                         <ImageButton
                             android:id="@+id/addClassButton"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/round_button"
-                            android:src="@drawable/add"
-                            android:tint="#fff"
                             android:padding="10dp"
                             android:scaleType="fitCenter"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_gravity="center"/>
+                            android:src="@drawable/add"
+                            android:tint="#fff" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Add Class"
                             android:layout_gravity="center"
-                            android:textColor="#fff"/>
+                            android:text="Add Class"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir"
+                            android:textSize="11dp"/>
 
                     </LinearLayout>
 
@@ -155,60 +389,63 @@
                         android:id="@+id/deleteClassWrapper"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
+                        android:layout_marginRight="15dp"
                         android:layout_toRightOf="@+id/addClassWrapper"
-                        android:layout_marginRight="10dp">
+                        android:orientation="vertical">
 
                         <ImageButton
                             android:id="@+id/deleteClassButton"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:background="@drawable/round_button"
-                            android:src="@drawable/delete"
-                            android:tint="#fff"
-                            android:padding="15dp"
-                            android:scaleType="fitCenter"
-                            android:layout_marginTop="10dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_marginBottom="5dp"
-                            android:layout_gravity="center"/>
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/round_button"
+                            android:padding="12dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/delete"
+                            android:tint="#fff" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Delete Class"
                             android:layout_gravity="center"
-                            android:textColor="#fff"/>
+                            android:text="Delete Class"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir"
+                            android:textSize="11dp"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_toRightOf="@+id/deleteClassWrapper">
+                        android:layout_toRightOf="@+id/deleteClassWrapper"
+                        android:orientation="vertical">
 
                         <ImageButton
                             android:id="@+id/pastClassesButton"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:background="@drawable/round_button"
-                            android:src="@drawable/past"
-                            android:tint="#fff"
-                            android:padding="15dp"
-                            android:scaleType="fitCenter"
-                            android:layout_marginTop="10dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_marginBottom="5dp"
-                            android:layout_gravity="center"/>
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/round_button"
+                            android:padding="12dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/past"
+                            android:tint="#fff" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Past Classes"
                             android:layout_gravity="center"
-                            android:textColor="#fff"/>
+                            android:text="Past Classes"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir"
+                            android:textSize="11dp"/>
 
                     </LinearLayout>
-
 
 
                 </RelativeLayout>

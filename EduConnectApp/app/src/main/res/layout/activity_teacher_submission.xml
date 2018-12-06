@@ -4,104 +4,315 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherSubmissionActivity">
+    tools:context=".SubmissionActivity">
 
-        <Button
-            android:id="@+id/submitBtn2"
-            android:layout_width="340dp"
-            android:layout_height="47dp"
-            android:layout_below="@+id/backArrow"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/dashboard_button_available"
-            android:text="submit"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:onClick="onTeacherSubmitClick"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionEt2" />
-
-        <TextView
-            android:id="@+id/classLabel3"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#003320"
-            android:gravity="center_horizontal"
-            android:text="P1: Intro to Interface Design"
-            android:textColor="#fff"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/background">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="Today, I feel..."
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.036"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/classLabel3" />
+                <!-- Status Bar Label -->
+                <RelativeLayout
+                    android:id="@+id/statusBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="364dp"
-            android:layout_height="156dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.833"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:srcCompat="@drawable/all_emojis" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center_horizontal"
+                            android:padding="10dp"
+                            android:src="@drawable/paly_logo"
+                            android:tint="#fff"/>
+                </RelativeLayout>
 
-        <Spinner
-            android:id="@+id/spinner_options2"
-            android:layout_width="161dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today, I feel..."
+                    android:textSize="25dp"
+                    android:textColor="@color/darkGray"
+                    android:layout_margin="20dp"/>
 
-        <EditText
-            android:id="@+id/descriptionEt2"
-            android:layout_width="363dp"
-            android:layout_height="127dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:lines="3"
-            android:minLines="2"
-            android:gravity="top|left"
-            android:maxLines="5"
-            android:scrollbars="vertical"
-            android:background="@drawable/edit_text_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.013"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_options2" />
+                <!-- emojis -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
 
+                        <!-- first row -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                                <!-- grinning emoji -->
+                                <ImageButton
+                                    android:id="@+id/grin_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/grinning_emoji_with_smiling_eyes"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- soft smile emoji -->
+                                <ImageButton
+                                    android:id="@+id/smiley_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/slightly_smiling_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- relieved emoji -->
+                                <ImageButton
+                                    android:id="@+id/relieved_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/relieved_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- mr cool emoji -->
+                                <ImageButton
+                                    android:id="@+id/sunglasses_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/sunglasses_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- delighted emoji -->
+                                <ImageButton
+                                    android:id="@+id/delighted_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/hugging_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- delighted emoji -->
+                                <ImageButton
+                                    android:id="@+id/dead_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/dead_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+                        </LinearLayout>
+
+                        <!-- second row -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                                <!-- neutral emoji -->
+                                <ImageButton
+                                    android:id="@+id/neutral_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/neutral_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- upside down emoji -->
+                                <ImageButton
+                                    android:id="@+id/upsidedown_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/upside_down_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- sad face -->
+                                <ImageButton
+                                    android:id="@+id/sad_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/sad_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- angry emoji -->
+                                <ImageButton
+                                    android:id="@+id/angry_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/very_angry_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- hella sad emoji -->
+                                <ImageButton
+                                    android:id="@+id/vsad_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/very_sad_emoji_icon_png"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- nerd emoji -->
+                                <ImageButton
+                                    android:id="@+id/nerd_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/nerd_emoji"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+                        </LinearLayout>
+
+                        <!-- third row -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                                <!-- confused emoji -->
+                                <ImageButton
+                                    android:id="@+id/confused_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/confounded_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- nervous emoji -->
+                                <ImageButton
+                                    android:id="@+id/nervous_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/cold_sweat_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- crying emoji -->
+                                <ImageButton
+                                    android:id="@+id/crying_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/crying_face_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- sick emoji -->
+                                <ImageButton
+                                    android:id="@+id/sick_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/sick_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- snoring emoji -->
+                                <ImageButton
+                                    android:id="@+id/sleeping_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/sleeping_with_snoring_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+
+                                <!-- surprised emoji -->
+                                <ImageButton
+                                    android:id="@+id/surprised_emoji"
+                                    android:scaleType="fitCenter"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/surprised_emoji"
+                                    android:onClick="onEmojiClick"
+                                    android:background="@color/background"
+                                    android:padding="7dp"/>
+                        </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- expanding words spinner -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp">
+
+                        <!--
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Choose conjuction: "
+                            android:textColor="@color/darkGray"
+                            android:textSize="14dp"/>-->
+
+                        <Spinner
+                            android:id="@+id/conjunction_spinner2"
+                            android:layout_width="130dp"
+                            android:layout_height="35dp"
+                            android:background="@android:drawable/btn_dropdown"
+                            android:spinnerMode="dropdown"
+                            />
+                </LinearLayout>
+
+                <!-- text response - expand answer -->
+                <EditText
+                    android:id="@+id/descriptionEt"
+                    android:layout_width="340dp"
+                    android:layout_height="130dp"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:minLines="2"
+                    android:gravity="top|left"
+                    android:maxLines="5"
+                    android:scrollbars="vertical"
+                    android:background="@drawable/edit_text_background"
+                    android:layout_gravity="center_horizontal"/>
+
+                <!-- submit button -->
+                <Button
+                    android:id="@+id/submitBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/dashboard_button_available"
+                    android:text="submit"
+                    android:textColor="@color/background"
+                    android:onClick="onTeacherSubmitClick"
+                    android:layout_margin="40dp"/>
+        </LinearLayout>
 </android.support.constraint.ConstraintLayout>
