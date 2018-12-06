@@ -290,7 +290,7 @@
 
                 <!-- text response - expand answer -->
                 <EditText
-                    android:id="@+id/descriptionEt"
+                    android:id="@+id/teacherDescriptionEt"
                     android:layout_width="340dp"
                     android:layout_height="130dp"
                     android:ems="10"
