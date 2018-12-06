@@ -1,6 +1,7 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
@@ -26,14 +27,15 @@ public class SubmissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submission);
         description = findViewById(R.id.descriptionEt);
 
-        Spinner spinner = findViewById(R.id.spinner_options);
+        Spinner conjunctionSpinner = findViewById(R.id.conjunction_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.text_options_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        conjunctionSpinner.setAdapter(adapter);
+        conjunctionSpinner.setPrompt("Choose a conjunction...");
     }
 
     public void onStudentSubmitClick(View v){
@@ -53,6 +55,7 @@ public class SubmissionActivity extends AppCompatActivity {
 
     public void onEmojiClick(View v){
         ImageButton emojiClicked = findViewById(v.getId());
+        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
 //        Drawable emojiImage = emojiClicked.getDrawable();
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), emojiClicked.getId());
 //        ByteArrayOutputStream baos = new ByteArrayOutputStream();

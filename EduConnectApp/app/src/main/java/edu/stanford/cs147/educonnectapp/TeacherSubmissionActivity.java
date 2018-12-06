@@ -24,7 +24,8 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         setContentView(layout.activity_teacher_submission);
         description = findViewById(R.id.teacherDescriptionEt);
 
-        Spinner spinner = findViewById(R.id.spinner_options);
+
+        Spinner spinner = findViewById(R.id.conjunction_spinner2);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.text_options_array, android.R.layout.simple_spinner_item);
@@ -43,5 +44,10 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
 
         Intent myIntent = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
         startActivity(myIntent);
+    }
+
+    public void onEmojiClick(View v){
+        ImageButton emojiClicked = findViewById(v.getId());
+        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
     }
 }

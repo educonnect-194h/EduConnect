@@ -6,122 +6,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/background">
 
-    <Button
-        android:id="@+id/btnChatMore"
-        style="@style/get_connected"
-        android:layout_width="143dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/layer_list_light"
-        android:text="Message Teacher?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
 
-    <Button
-        android:id="@+id/btnBackToDashboard"
-        style="@style/get_connected"
-        android:layout_width="143dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="444dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/layer_list_light"
-        android:text="Return to Dashboard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="165dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Thank you for submitting!"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="291dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Your teacher is feeling..."
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <!-- Thank you for submitting -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thank you for submitting!"
+            android:textSize="25dp"
+            android:textColor="@color/darkGray"
+            android:fontFamily="@font/avenir"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="20dp"/>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="291dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="but..."
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacherEmoji" />
+        <!-- your teacher is feeling... -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:text="Your teacher is feeling..."
+            android:textSize="18dp"
+            android:fontFamily="@font/avenir"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"/>
 
-    <ImageView
-        android:id="@+id/teacherEmoji"
-        android:layout_width="61dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        <!-- teacher emoji -->
+        <ImageView
+            android:id="@+id/teacherEmoji"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/very_sad_emoji_icon_png" />
 
-    <TextView
-        android:id="@+id/teacherResponse"
-        android:layout_width="291dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="&quot;I'm excited to play this game I made for the class today!&quot;"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnChatMore"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <!-- conjunction... -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:text="but..."
+            android:textSize="18dp"
+            android:fontFamily="@font/avenir"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"/>
 
+        <!-- explanation -->
+        <TextView
+            android:id="@+id/teacherResponse"
+            android:layout_width="300dp"
+            android:layout_height="88dp"
+            android:text="&quot;I'm excited to play a game I made for the class today!&quot;"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/darkGray"
+            android:fontFamily="@font/avenir"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Return to Dashboard -->
+        <RelativeLayout
+            android:layout_width="190dp"
+            android:layout_height="45dp">
+
+            <ImageButton
+                android:id="@+id/btnBackToDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dashboard_button_available"
+                android:src="@drawable/back_arrow"
+                android:tint="@color/background"
+                android:scaleType="fitStart"
+                android:paddingVertical="12dp"
+                android:paddingLeft="10dp"
+                android:onClick="onBackToDashClick"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Return to Dashboard"
+                android:textColor="@color/background"
+                android:layout_marginLeft="45dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+        <!-- wholesome message -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Remember: your teacher is always available to chat more - just communicate over messages or in person!"
+            android:fontFamily="@font/avenir"
+            android:textSize="12dp"
+            android:padding="30dp"
+            android:gravity="bottom"/>
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

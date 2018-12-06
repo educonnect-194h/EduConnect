@@ -6,64 +6,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnEditResponse"
-        style="@style/get_connected"
-        android:layout_width="143dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/layer_list_light"
-        android:text="Edit Response"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
-
-    <Button
-        android:id="@+id/btnBackToDashboard2"
-        style="@style/get_connected"
-        android:layout_width="143dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="384dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/layer_list_dark"
-        android:text="Return to Dashboard"
-        android:onClick="onBackToDashClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="165dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Thank you for submitting!"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/classLabel"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center_horizontal"
-        android:padding="5dp"
-        android:text="P1: Algebra II"
-        android:textColor="#fff" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+        </RelativeLayout>
+
+        <!-- Thank you for submitting -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thank you for submitting!"
+            android:textSize="25dp"
+            android:textColor="@color/darkGray"
+            android:fontFamily="@font/avenir"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="50dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Edit Response -->
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageButton
+                    android:id="@+id/btnEditResponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashboard_button_available"
+                    android:src="@drawable/edit"
+                    android:scaleType="fitStart"
+                    android:paddingVertical="12dp"
+                    android:paddingLeft="11dp"
+                    android:tint="@color/background"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Response"
+                    android:textColor="@color/background"
+                    android:layout_marginLeft="45dp"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Return to Dashboard -->
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="45dp">
+
+                <ImageButton
+                    android:id="@+id/btnBackToDashboard2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashboard_button_available"
+                    android:src="@drawable/back_arrow"
+                    android:tint="@color/background"
+                    android:scaleType="fitStart"
+                    android:paddingVertical="12dp"
+                    android:paddingLeft="10dp"
+                    android:onClick="onBackToDashClick"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Return to Dashboard"
+                    android:textColor="@color/background"
+                    android:layout_marginLeft="45dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

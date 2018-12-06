@@ -7,11 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     Button studentLogin;
     EditText username, password;
 
@@ -29,8 +27,6 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
-
-        mTextMessage = (TextView) findViewById(R.id.message);
     }
 
     public void onTeacherLoginClick(View v){
@@ -41,6 +37,12 @@ public class LoginActivity extends AppCompatActivity {
     // student period one click
     public void onPeriodOneClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void logoutStudent(View v){
+        System.out.println("ClassList.java");
+        Intent myIntent = new Intent(getBaseContext(), LoginActivity.class);
         startActivity(myIntent);
     }
 
@@ -96,9 +98,13 @@ public class LoginActivity extends AppCompatActivity {
         if(user.equals("jailenem") && pass.equals("ilovejailene"))
         {
             setContentView(R.layout.activity_class_list);
-        }else {
+        }else if(true){
+            setContentView(R.layout.activity_class_list);
+        } else{
             setContentView(R.layout.activity_class_list);
         }
     }
+
+
 
 }

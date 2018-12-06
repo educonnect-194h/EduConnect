@@ -4,105 +4,204 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.stanford.cs147.educonnectapp.TeacherDashboardActivity">
+    tools:context="edu.stanford.cs147.educonnectapp.StudentDashboardActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/classes_background"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
+        android:background="@color/background">
 
-        <TextView
-            android:id="@+id/classLabel"
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="#fff"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="8dp">
+
+                <ImageButton
+                    android:id="@+id/menuButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/menu"
+                    android:tint="#fff"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_gravity="center"
+                    android:onClick="backToClasses"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class List"
+                    android:textSize="10dp"
+                    android:textColor="@color/background"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Class Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:id="@+id/classHeader"
             android:background="@color/colorPrimaryDark"
-            android:gravity="center_horizontal"
-            android:padding="5dp"
-            android:text="P1: Algebra II"
-            android:textColor="#fff" />
+            android:paddingBottom="8dp"
+            android:gravity="center">
 
-        <!--<LinearLayout-->
-        <!--android:id="@+id/backArrow"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/classLabel"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_marginTop="10dp">-->
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Algebra II"
+                android:textColor="#fff"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/avenir"/>
 
-        <!--<Button-->
-        <!--android:id="@+id/backButton"-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:background="@drawable/back_arrow"-->
-        <!--android:backgroundTint="#2e2e2e" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Period 1"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:fontFamily="@font/avenir"/>
+        </LinearLayout>
 
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Back"-->
-        <!--android:textColor="#2e2e2e" />-->
-        <!--</LinearLayout>-->
+        <!-- Action Items -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/class_section"
+            android:layout_marginBottom="10dp">
 
-        <!-- FEELINGS BUTTON -->
+            <!-- Action Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir"
+                android:text="Action Items"
+                android:textSize="20dp"
+                android:textColor="@color/darkGray"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"/>
 
-        <Button
-            android:id="@+id/teacherFeelings"
-            android:layout_width="340dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/dashboard_button_available"
-            android:onClick="onTeacherFeelingsClick"
-            android:text="How are you feeling today?"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
+            <!-- FEELINGS BUTTON -->
+            <Button
+                android:id="@+id/teacherFeelings"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:background="@drawable/dashboard_button_available"
+                android:onClick="onTeacherFeelingsClick"
+                android:text="How are you feeling today?"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/avenir"/>
+        </LinearLayout>
+
+        <!-- Other Options Section -->
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/appentry"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/teacherFeelings"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true">
+            android:orientation="vertical">
+
+            <!-- Other Options Label -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkGray"
+                    android:textSize="20dp"
+                    android:text="Other Options"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/availableNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(available once action items are completed)"
+                    android:textSize="10dp"
+                    android:textColor="@color/lightGray"
+                    android:layout_marginLeft="10dp"/>
+
+            </LinearLayout>
 
             <!-- CLASS RESULTS BUTTON -->
-
             <RelativeLayout
-                android:layout_width="179dp"
-                android:layout_height="158dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
                 <ImageButton
                     android:id="@+id/classResultsBtn"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/dashboard_button_unavailable"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/class_section"
+                    android:paddingVertical="10dp"
+                    android:paddingLeft="20dp"
+                    android:scaleType="fitStart"
                     android:src="@drawable/class_results"
-                    android:tint="#ffffff"
+                    android:tint="@color/darkGray"
                     android:onClick="onClassResultsClick"/>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/resultsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="Class Results"
-                    android:textColor="#2e2e2e"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/darkGray"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="90dp"/>
+
+                <ImageView
+                    android:id="@+id/resultsArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/right_arrow"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"/>
 
             </RelativeLayout>
 
@@ -110,80 +209,87 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+                android:layout_height="wrap_content">
 
                 <ImageButton
                     android:id="@+id/messagesButton2"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/dashboard_button_unavailable"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/class_section"
+                    android:paddingVertical="10dp"
+                    android:paddingLeft="20dp"
+                    android:scaleType="fitStart"
                     android:src="@drawable/messages"
-                    android:tint="#ffffff" />
+                    android:tint="@color/darkGray" />
 
                 <TextView
+                    android:id="@+id/messagesText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="Messages"
-                    android:textColor="#2e2e2e"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/darkGray"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="90dp"/>
+
+                <ImageView
+                    android:id="@+id/messagesArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/right_arrow"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"/>
 
             </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/appentry2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/appentry"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
 
             <!-- ROSTER BUTTON -->
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+                android:layout_height="wrap_content">
 
                 <ImageButton
                     android:id="@+id/rosterButton"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/dashboard_button_unavailable"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/class_section"
+                    android:paddingVertical="10dp"
+                    android:paddingLeft="20dp"
+                    android:scaleType="fitStart"
                     android:src="@drawable/roster"
-                    android:tint="#ffffff" />
+                    android:tint="@color/darkGray" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/rosterText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:text="Roster"
-                    android:textColor="#2e2e2e"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:text="Student Roster"
+                    android:textColor="@color/darkGray"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/avenir"
+                    android:layout_marginLeft="90dp"/>
+
+                <ImageView
+                    android:id="@+id/rosterArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/right_arrow"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"/>
 
             </RelativeLayout>
-
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

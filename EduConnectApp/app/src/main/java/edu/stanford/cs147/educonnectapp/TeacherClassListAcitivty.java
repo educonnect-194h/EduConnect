@@ -17,4 +17,10 @@ public class TeacherClassListAcitivty extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
+
+    public void logout(View v){
+        System.out.println("TeacherClassListActivity");
+        Intent myIntent = new Intent(getBaseContext(), LoginActivity.class);
+        startActivity(myIntent);
+    }
 }

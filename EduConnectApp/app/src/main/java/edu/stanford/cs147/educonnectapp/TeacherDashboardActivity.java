@@ -1,11 +1,14 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.ImageView;
 
 public class TeacherDashboardActivity extends AppCompatActivity {
 
@@ -37,14 +40,32 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             feelingsButton.setBackgroundResource(R.drawable.dashboard_button_unavailable);
             feelingsButton.setClickable(false);
 
-            rosterBtn.setBackgroundResource(R.drawable.dashboard_button_available_trans);
-            rosterBtn.setClickable(true);
-
-            messagesBtn.setBackgroundResource(R.drawable.dashboard_button_available_trans);
-            messagesBtn.setClickable(true);
-
-            classResultsBtn.setBackgroundResource(R.drawable.dashboard_button_available_trans);
+            TextView results = findViewById(R.id.resultsText);
+            results.setTextColor(getResources().getColor(R.color.colorPrimary));
+            results.setTypeface(null, Typeface.BOLD);
             classResultsBtn.setClickable(true);
+            classResultsBtn.setColorFilter(getResources().getColor(R.color.colorPrimary));
+            ImageView resultsArrow = findViewById(R.id.resultsArrow);
+            resultsArrow.setVisibility(View.VISIBLE);
+
+            TextView messages = findViewById(R.id.messagesText);
+            messages.setTextColor(getResources().getColor(R.color.colorPrimary));
+            messages.setTypeface(null, Typeface.BOLD);
+            messagesBtn.setClickable(true);
+            messagesBtn.setColorFilter(getResources().getColor(R.color.colorPrimary));
+            ImageView messagesArrow = findViewById(R.id.messagesArrow);
+            messagesArrow.setVisibility(View.VISIBLE);
+
+            TextView roster = findViewById(R.id.rosterText);
+            roster.setTextColor(getResources().getColor(R.color.colorPrimary));
+            roster.setTypeface(null, Typeface.BOLD);
+            rosterBtn.setClickable(true);
+            rosterBtn.setColorFilter(getResources().getColor(R.color.colorPrimary));
+            ImageView rosterArrow = findViewById(R.id.rosterArrow);
+            rosterArrow.setVisibility(View.VISIBLE);
+
+            TextView available = findViewById(R.id.availableNote);
+            available.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -55,6 +76,11 @@ public class TeacherDashboardActivity extends AppCompatActivity {
 
     public void onClassResultsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void backToClasses(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherClassListAcitivty.class);
         startActivity(myIntent);
     }
 }
