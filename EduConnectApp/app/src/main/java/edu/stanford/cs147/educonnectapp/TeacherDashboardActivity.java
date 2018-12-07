@@ -67,6 +67,9 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             TextView available = findViewById(R.id.availableNote);
             available.setVisibility(View.INVISIBLE);
         }
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onTeacherFeelingsClick(View v){
@@ -76,6 +79,7 @@ public class TeacherDashboardActivity extends AppCompatActivity {
 
     public void onClassResultsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
+        myIntent.putExtra("current", true);
         startActivity(myIntent);
     }
 

@@ -26,8 +26,9 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:src="@drawable/paly_logo"
-                android:tint="#fff"/>
+                android:tint="@color/background"/>
 
+            <!-- class list button -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,19 +71,21 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/header"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Algebra II"
-                android:textColor="#fff"
+                android:text="P1: Algebra II"
+                android:textColor="@color/background"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/avenir"/>
 
             <TextView
+                android:id="@+id/classPeriod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Period 1"
-                android:textColor="#fff"
+                android:text="Dashboard"
+                android:textColor="@color/background"
                 android:textSize="15dp"
                 android:fontFamily="@font/avenir"/>
         </LinearLayout>
@@ -111,19 +114,18 @@
             <!-- FEELINGS BUTTON -->
             <Button
                 android:id="@+id/feelingsButton"
-                android:layout_width="345dp"
+                android:layout_width="320dp"
                 android:layout_height="60dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="35dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
+                android:layout_gravity="center"
                 android:background="@drawable/dashboard_button_available"
                 android:onClick="onFeelingsClick"
                 android:text="How are you feeling today?"
-                android:textColor="#ffffff"
-                android:textSize="18dp"
+                android:textColor="@color/background"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/avenir"/>
         </LinearLayout>
@@ -157,8 +159,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(available once action items are completed)"
-                    android:textSize="10dp"
-                    android:textColor="@color/lightGray"
+                    android:textSize="9dp"
+                    android:textColor="@color/shadowGray"
                     android:layout_marginLeft="10dp"/>
 
             </LinearLayout>

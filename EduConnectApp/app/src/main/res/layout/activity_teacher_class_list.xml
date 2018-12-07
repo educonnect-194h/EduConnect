@@ -25,7 +25,7 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:src="@drawable/paly_logo"
-                android:tint="#fff"/>
+                android:tint="@color/background"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
                     android:layout_height="25dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/logout"
-                    android:tint="#fff"
+                    android:tint="@color/background"
                     android:background="@color/colorPrimaryDark"
                     android:onClick="logout"/>
                 <TextView
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/periodOne"
+                        android:id="@+id/periodOneTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
@@ -99,13 +99,14 @@
                         android:onClick="onTeacherPeriodOneClick"
                         android:textAlignment="viewStart"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodOneTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ALGEBRA II"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -117,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 1"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodOne"
+                        android:layout_alignBottom="@+id/periodOneTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -131,20 +132,22 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/periodTwo"
+                        android:id="@+id/periodTwoTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
                         android:background="@drawable/layer_list_light"
                         android:textAlignment="viewStart"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:onClick="onTeacherPeriodTwoClick"
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodTwoTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ALGEBRA II"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -156,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 2"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodTwo"
+                        android:layout_alignBottom="@+id/periodTwoTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -179,21 +182,23 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/periodThree"
+                        android:id="@+id/periodThreeTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
                         android:layout_marginRight="20dp"
                         android:background="@drawable/layer_list_light"
                         android:textAlignment="viewStart"
+                        android:onClick="onTeacherPeriodThreeClick"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodThreeTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CALCULUS AB"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -205,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 3"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodThree"
+                        android:layout_alignBottom="@+id/periodThreeTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -219,20 +224,22 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/periodFour"
+                        android:id="@+id/periodFourTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
                         android:background="@drawable/layer_list_light"
                         android:textAlignment="viewStart"
+                        android:onClick="onTeacherPeriodFourClick"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodFourTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="PRE-CALCULUS"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -244,7 +251,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 4"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodFour"
+                        android:layout_alignBottom="@+id/periodFourTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -269,21 +276,23 @@
                     android:elevation="3dp">
 
                     <ImageButton
-                        android:id="@+id/periodFive"
+                        android:id="@+id/periodFiveTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
                         android:layout_marginRight="20dp"
                         android:background="@drawable/layer_list_light"
                         android:textAlignment="viewStart"
+                        android:onClick="onTeacherPeriodFiveClick"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodFiveTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CALCULUS BC"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -295,7 +304,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 5"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodFive"
+                        android:layout_alignBottom="@+id/periodFiveTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -309,20 +318,22 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/periodSix"
+                        android:id="@+id/periodSixTeacher"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="start"
                         android:background="@drawable/layer_list_light"
                         android:textAlignment="viewStart"
                         android:paddingLeft="15dp"
-                        android:textColor="#fff"/>
+                        android:onClick="onTeacherPeriodSixClick"
+                        android:textColor="@color/background"/>
 
                     <TextView
+                        android:id="@+id/periodSixTeacherText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CALCULUS BC"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/background"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:paddingLeft="10dp"
@@ -334,7 +345,7 @@
                         android:layout_height="wrap_content"
                         android:text="Period 6"
                         android:textColor="#2e2e2e"
-                        android:layout_alignBottom="@+id/periodSix"
+                        android:layout_alignBottom="@+id/periodSixTeacher"
                         android:paddingBottom="7dp"
                         android:paddingLeft="10dp"
                         android:fontFamily="@font/avenir"/>
@@ -372,7 +383,7 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:src="@drawable/add"
-                            android:tint="#fff" />
+                            android:tint="@color/background" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -405,7 +416,7 @@
                             android:padding="12dp"
                             android:scaleType="fitCenter"
                             android:src="@drawable/delete"
-                            android:tint="#fff" />
+                            android:tint="@color/background" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -435,7 +446,7 @@
                             android:padding="12dp"
                             android:scaleType="fitCenter"
                             android:src="@drawable/past"
-                            android:tint="#fff" />
+                            android:tint="@color/background" />
 
                         <TextView
                             android:layout_width="wrap_content"

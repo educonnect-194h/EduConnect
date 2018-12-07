@@ -52,6 +52,9 @@ public class StudentDashboardActivity extends AppCompatActivity {
             TextView available = findViewById(R.id.availableNote2);
             available.setVisibility(View.INVISIBLE);
         }
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onFeelingsClick(View v){
