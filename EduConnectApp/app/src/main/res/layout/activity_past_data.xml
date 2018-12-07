@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.stanford.cs147.educonnectapp.PastDataActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <!-- Status Bar Label -->
+        <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:src="@drawable/paly_logo"
+                android:tint="@color/background"/>
+
+            <!-- dashboard button -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/menuButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="3dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dashboard"
+                    android:tint="@color/background"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="backToDashboard"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dashboard"
+                    android:textSize="10dp"
+                    android:textColor="@color/background" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:id="@+id/classHeader"
+            android:background="@color/colorPrimaryDark"
+            android:paddingBottom="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_below="@id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="P1: Algebra II"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/background"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="@font/avenir"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_below="@id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Past Data"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                android:textColor="@color/background"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="@font/avenir"
+                android:gravity="center"
+                android:paddingBottom="10dp" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

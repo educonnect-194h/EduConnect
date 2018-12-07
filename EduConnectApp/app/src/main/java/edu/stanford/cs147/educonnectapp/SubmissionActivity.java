@@ -1,33 +1,25 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import java.io.ByteArrayOutputStream;
 
 public class SubmissionActivity extends AppCompatActivity {
     EditText description;
     ImageButton oldSelectedEmoji;
     Boolean emojiAlreadySelected = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submission);
-        description = findViewById(R.id.descriptionEt);
 
         Spinner conjunctionSpinner = findViewById(R.id.conjunction_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -41,16 +33,6 @@ public class SubmissionActivity extends AppCompatActivity {
     }
 
     public void onStudentSubmitClick(View v){
-        // Description text only needs to be passed to "Detailed Student Reports Results"
-        // on Teacher side
-        //UNCOMMENT THIS WHEN DETAILEDSRRESULTS IS CREATED
-//        String descriptionText = description.getText().toString().trim();
-//        Intent passDescription = new Intent(this, DetailedSRResults.class);
-//        passDescription.putExtra("descriptionText", descriptionText);
-//        startActivity(passDescription);
-//        // PUT THIS IN DetailedSRResults.java IN ONCREATE:
-//        Intent intent = getIntent();
-//        String descriptionText = intent.getExtras().getString("descriptionText");
         Intent myIntent = new Intent(getBaseContext(), SubmittedActivity.class);
         startActivity(myIntent);
     }
