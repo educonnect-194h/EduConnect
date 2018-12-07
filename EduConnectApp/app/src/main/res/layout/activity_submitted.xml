@@ -120,7 +120,7 @@
             android:layout_height="match_parent"
             android:text="Remember: your teacher is always available to chat more - just communicate over messages or in person!"
             android:fontFamily="@font/avenir"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:padding="30dp"
             android:gravity="bottom"/>
 

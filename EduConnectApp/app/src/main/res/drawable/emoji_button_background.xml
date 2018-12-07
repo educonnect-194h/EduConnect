@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-        <item
-            android:state_focused="true"
-            android:state_pressed="true"
-            android:drawable="@drawable/sick_emoji" />
+        <item>
+                <shape android:shape="rectangle">
+                        <stroke android:color="@color/lightGray" android:width="2dp"></stroke>
+                </shape>
+        </item>
 
-        <item
-            android:state_focused="false"
-            android:state_pressed="true"
-            android:drawable="@drawable/edit_text_background" />
-
-        <item android:drawable="@drawable/sick_emoji" />
+        <item>
+                <shape android:shape="rectangle">
+                        <stroke
+                            android:color="@color/colorPrimary"
+                            android:width="2dp"
+                            />
+                        <corners android:radius="7dp"/>
+                </shape>
+        </item>
 
 </selector>

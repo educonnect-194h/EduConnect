@@ -175,6 +175,7 @@
                     android:scaleType="fitCenter"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
+                    android:onClick="onEmojiClick"
                     android:src="@drawable/very_sad_emoji_icon_png"
                     android:background="@color/background"
                     android:padding="7dp"/>
@@ -186,6 +187,7 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:src="@drawable/nerd_emoji"
+                    android:onClick="onEmojiClick"
                     android:background="@color/background"
                     android:padding="7dp"/>
             </LinearLayout>
@@ -282,8 +284,8 @@
 
             <Spinner
                 android:id="@+id/conjunction_spinner"
-                android:layout_width="130dp"
-                android:layout_height="35dp"
+                android:layout_width="145dp"
+                android:layout_height="40dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"
                 />

@@ -58,7 +58,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/grinning_emoji_with_smiling_eyes"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -69,7 +69,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/slightly_smiling_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -80,7 +80,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/relieved_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -91,7 +91,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/sunglasses_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -102,7 +102,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/hugging_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -113,7 +113,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/dead_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
                         </LinearLayout>
@@ -131,7 +131,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/neutral_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -142,7 +142,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/upside_down_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -153,7 +153,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/sad_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -164,7 +164,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/very_angry_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -175,6 +175,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/very_sad_emoji_icon_png"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -185,6 +186,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/nerd_emoji"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
                         </LinearLayout>
@@ -202,7 +204,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/confounded_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -213,7 +215,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/cold_sweat_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -224,7 +226,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/crying_face_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -235,7 +237,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/sick_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -246,7 +248,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/sleeping_with_snoring_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
 
@@ -257,7 +259,7 @@
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/surprised_emoji"
-                                    android:onClick="onEmojiClick"
+                                    android:onClick="onTeacherEmojiClick"
                                     android:background="@color/background"
                                     android:padding="7dp"/>
                         </LinearLayout>
@@ -281,8 +283,8 @@
 
                         <Spinner
                             android:id="@+id/conjunction_spinner2"
-                            android:layout_width="130dp"
-                            android:layout_height="35dp"
+                            android:layout_width="145dp"
+                            android:layout_height="40dp"
                             android:background="@android:drawable/btn_dropdown"
                             android:spinnerMode="dropdown"
                             />

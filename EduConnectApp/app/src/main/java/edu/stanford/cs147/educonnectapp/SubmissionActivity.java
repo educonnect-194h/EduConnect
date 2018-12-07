@@ -20,6 +20,8 @@ import java.io.ByteArrayOutputStream;
 
 public class SubmissionActivity extends AppCompatActivity {
     EditText description;
+    ImageButton oldSelectedEmoji;
+    Boolean emojiAlreadySelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +56,6 @@ public class SubmissionActivity extends AppCompatActivity {
     }
 
     public void onEmojiClick(View v){
-        ImageButton emojiClicked = findViewById(v.getId());
-        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
 //        Drawable emojiImage = emojiClicked.getDrawable();
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), emojiClicked.getId());
 //        ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -66,7 +66,17 @@ public class SubmissionActivity extends AppCompatActivity {
 //        passEmojiClicked.putExtra("emojiImage", b);
 //        startActivity(passEmojiClicked);
 
-        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
+        ImageButton emojiClicked = findViewById(v.getId());
+        if (!emojiAlreadySelected) {
+            emojiClicked.setBackgroundResource(R.drawable.emoji_button_background);
+            oldSelectedEmoji = emojiClicked;
+        }
+        else {
+            oldSelectedEmoji.setBackgroundResource(0);
+            emojiClicked.setBackgroundResource(R.drawable.emoji_button_background);
+            oldSelectedEmoji = emojiClicked;
+        }
+        emojiAlreadySelected = true;
 
     }
     

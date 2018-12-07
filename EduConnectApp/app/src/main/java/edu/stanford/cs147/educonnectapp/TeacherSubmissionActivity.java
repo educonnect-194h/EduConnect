@@ -1,23 +1,40 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
+import java.util.Map;
 
 import static edu.stanford.cs147.educonnectapp.R.*;
 
-public class TeacherSubmissionActivity extends AppCompatActivity {
 
+public class TeacherSubmissionActivity extends AppCompatActivity {
+    public static final String PREFERENCES_NAME = "SharedPrefsFile";
     EditText description;
+    Boolean emojiAlreadySelected = false;
+    ImageButton oldSelectedEmoji;
+    TextView textEncode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,16 +55,39 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     public void onTeacherSubmitClick(View v){
         // Description text needs to be passed to "Submitted Activity"
         String descriptionText = description.getText().toString().trim();
-        Intent passDescription = new Intent(this, SubmittedActivity.class);
-        passDescription.putExtra("descriptionText", descriptionText);
-        startActivity(passDescription);
-
-        Intent myIntent = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
-        startActivity(myIntent);
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
+        editor.putString("teacherDescriptionText", descriptionText);
+        editor.apply();
+        Intent nextPage = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
+        startActivity(nextPage);
     }
 
-    public void onEmojiClick(View v){
+    public void onTeacherEmojiClick(View v){
         ImageButton emojiClicked = findViewById(v.getId());
-        emojiClicked.setBackgroundResource(R.drawable.edit_text_background);
+        if (!emojiAlreadySelected) {
+            emojiClicked.setBackgroundResource(drawable.emoji_button_background);
+            oldSelectedEmoji = emojiClicked;
+        }
+        else {
+            oldSelectedEmoji.setBackgroundResource(0);
+            emojiClicked.setBackgroundResource(drawable.emoji_button_background);
+            oldSelectedEmoji = emojiClicked;
+        }
+        emojiAlreadySelected = true;
+        Integer emojiClickedId = emojiClicked.getId();
+
+        Bitmap bitmap = ((BitmapDrawable) emojiClicked.getDrawable()).getBitmap();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+
+        String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+
+        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
+        editor.putString("emojiId", encodedImage);
+        editor.apply();
+
+        // Passing emoji to Student Submitted Activity (Your teacher feels...)
     }
 }
