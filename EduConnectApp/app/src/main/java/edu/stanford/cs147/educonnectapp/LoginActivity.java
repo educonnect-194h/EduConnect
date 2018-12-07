@@ -278,4 +278,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onMessageStudentClick(View v) {
+        TextView name = findViewById(R.id.tvStudentName);
+
+        Intent i = new Intent(this, TeacherIndividualMessageActivity.class);
+        i.putExtra("senderName", name.getText());
+
+        startActivity(i);
+    }
+
 }
