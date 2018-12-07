@@ -64,4 +64,9 @@ public class StudentDashboardActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void studentMessagesClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentMessagesActivity.class);
+        startActivity(myIntent);
+    }
+
 }
