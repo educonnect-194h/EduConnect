@@ -104,6 +104,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void onMessagesClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherMessagesListActivity.class);
+        startActivity(myIntent);
+    }
+
     public void onRedFlagsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
         startActivity(myIntent);
@@ -113,6 +118,13 @@ public class LoginActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
+
+    public void studentMessagesClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentMessagesActivity.class);
+        startActivity(myIntent);
+    }
+
+
 
     public void login() {
         System.out.println("made it!");

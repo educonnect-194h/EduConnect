@@ -209,7 +209,8 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" >
+
 
                 <ImageButton
                     android:id="@+id/messagesButton"
@@ -220,7 +221,8 @@
                     android:paddingLeft="20dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/messages"
-                    android:tint="@color/darkGray" />
+                    android:tint="@color/darkGray"
+                    android:onClick="studentMessagesClick"/>
 
                 <TextView
                     android:id="@+id/messagesText2"
