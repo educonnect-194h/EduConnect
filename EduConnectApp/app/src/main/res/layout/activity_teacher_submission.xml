@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubmissionActivity">
+    tools:context=".TeacherSubmissionActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -290,7 +290,7 @@
 
                 <!-- text response - expand answer -->
                 <EditText
-                    android:id="@+id/descriptionEt"
+                    android:id="@+id/teacherDescriptionEt"
                     android:layout_width="340dp"
                     android:layout_height="130dp"
                     android:ems="10"

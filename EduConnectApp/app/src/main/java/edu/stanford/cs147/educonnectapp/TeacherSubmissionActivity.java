@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -16,10 +17,13 @@ import static edu.stanford.cs147.educonnectapp.R.*;
 
 public class TeacherSubmissionActivity extends AppCompatActivity {
 
+    EditText description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_teacher_submission);
+        description = findViewById(R.id.teacherDescriptionEt);
+
 
         Spinner spinner = findViewById(R.id.conjunction_spinner2);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -32,6 +36,12 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     }
 
     public void onTeacherSubmitClick(View v){
+        // Description text needs to be passed to "Submitted Activity"
+        String descriptionText = description.getText().toString().trim();
+        Intent passDescription = new Intent(this, SubmittedActivity.class);
+        passDescription.putExtra("descriptionText", descriptionText);
+        startActivity(passDescription);
+
         Intent myIntent = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
         startActivity(myIntent);
     }

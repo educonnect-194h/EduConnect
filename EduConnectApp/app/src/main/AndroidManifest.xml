@@ -33,6 +33,10 @@
         <activity android:name=".TeacherSubmittedActivity" />
         <activity android:name=".DataBreakdownActivity" />
         <activity android:name=".PastDataActivity"></activity>
+        <activity android:name=".TeacherMessagesListActivity" />
+        <activity android:name=".TeacherIndividualMessageActivity" />
+        <activity android:name=".StudentMessagesActivity"></activity>
+
     </application>
 
 </manifest>

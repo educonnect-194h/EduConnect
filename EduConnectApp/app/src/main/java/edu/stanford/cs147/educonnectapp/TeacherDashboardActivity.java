@@ -87,4 +87,9 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), TeacherClassListAcitivty.class);
         startActivity(myIntent);
     }
+
+    public void onMessagesClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherMessagesListActivity.class);
+        startActivity(myIntent);
+    }
 }

@@ -11,6 +11,9 @@ public class SubmittedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submitted);
+        // PUT THIS IN DetailedSRResults.java IN ONCREATE:
+        //Intent intent = getIntent();
+        //String descriptionText = intent.getExtras().getString("descriptionText");
     }
 
     public void onBackToDashClick(View v){

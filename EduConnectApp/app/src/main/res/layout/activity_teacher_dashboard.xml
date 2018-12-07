@@ -220,7 +220,8 @@
                     android:paddingLeft="20dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/messages"
-                    android:tint="@color/darkGray" />
+                    android:tint="@color/darkGray"
+                    android:onClick="onMessagesClick"/>
 
                 <TextView
                     android:id="@+id/messagesText"
