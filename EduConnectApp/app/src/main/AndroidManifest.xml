@@ -21,22 +21,25 @@
         </activity>
         <activity android:name=".StudentDashboardActivity" />
         <activity android:name=".ClassList" />
-        <activity android:name=".SubmissionActivity"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".SubmissionActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".SubmittedActivity" />
         <activity android:name=".TeacherClassListAcitivty" />
         <activity android:name=".TeacherDashboardActivity" />
         <activity android:name=".ClassResultsActivity" />
         <activity android:name=".RedFlagsActivity" />
-        <activity android:name=".TeacherSubmissionActivity"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".TeacherSubmissionActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".TeacherSubmittedActivity" />
         <activity android:name=".DataBreakdownActivity" />
-        <activity android:name=".PastDataActivity"></activity>
+        <activity android:name=".PastDataActivity" />
         <activity android:name=".TeacherMessagesListActivity" />
         <activity android:name=".TeacherIndividualMessageActivity" />
-        <activity android:name=".StudentMessagesActivity"></activity>
-
+        <activity android:name=".StudentMessagesActivity" />
+        <activity android:name=".StudentHistoryActivity"/>
+        <activity android:name=".RosterActivity"></activity>
     </application>
 
 </manifest>

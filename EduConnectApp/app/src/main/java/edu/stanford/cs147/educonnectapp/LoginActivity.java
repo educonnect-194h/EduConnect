@@ -164,6 +164,14 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void onRosterClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), RosterActivity.class);
+        startActivity(myIntent);
+    }
+    public void studentProfileClick(View v){
+        Intent myIntent = new Intent(getBaseContext(),StudentHistoryActivity.class);
+        startActivity(myIntent);
+    }
 
 
     public void login() {
