@@ -72,4 +72,9 @@ public class StudentDashboardActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void studentYourHistoryClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
+        startActivity(myIntent);
+    }
+
 }

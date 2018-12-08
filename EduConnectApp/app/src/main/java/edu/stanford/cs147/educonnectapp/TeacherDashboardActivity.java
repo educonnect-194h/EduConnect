@@ -96,4 +96,9 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), TeacherMessagesListActivity.class);
         startActivity(myIntent);
     }
+    public void onRosterClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), RosterActivity.class);
+        startActivity(myIntent);
+    }
+
 }
