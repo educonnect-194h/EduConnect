@@ -39,7 +39,8 @@
         <activity android:name=".TeacherIndividualMessageActivity" />
         <activity android:name=".StudentMessagesActivity" />
         <activity android:name=".StudentHistoryActivity"/>
-        <activity android:name=".RosterActivity"></activity>
+        <activity android:name=".RosterActivity"/>
+        <activity android:name=".StudentDetailedResultsActivity" />
     </application>
 
 </manifest>

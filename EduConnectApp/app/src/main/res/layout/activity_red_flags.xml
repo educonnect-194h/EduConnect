@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="30dp"
                 android:paddingLeft="10dp">
 
                 <ImageView
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:layout_width="195dp"
-                    android:layout_height="80dp"
+                    android:layout_height="100dp"
                     android:text="Based on our metrics, collected data shows that Jailene's responses have been downward trending since Oct. 12, 2018.  Checking in with her would be a good next step."
                     android:textSize="12dp"
                     android:layout_marginLeft="15dp" />

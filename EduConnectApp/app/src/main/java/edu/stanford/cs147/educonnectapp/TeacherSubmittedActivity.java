@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class TeacherSubmittedActivity extends AppCompatActivity {
 
@@ -11,10 +12,16 @@ public class TeacherSubmittedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_submitted);
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onBackToDashClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
+        TextView header = findViewById(R.id.header);
+
+        Intent myIntent = new Intent(getApplicationContext(), TeacherDashboardActivity.class);
+        myIntent.putExtra("header", header.getText());
         myIntent.putExtra("Submitted", true);
         startActivity(myIntent);
     }

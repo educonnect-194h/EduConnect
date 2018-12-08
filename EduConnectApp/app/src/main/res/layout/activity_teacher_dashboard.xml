@@ -178,7 +178,7 @@
                     android:scaleType="fitStart"
                     android:src="@drawable/class_results"
                     android:tint="@color/darkGray"
-                    android:onClick="onClassResultsClick"/>
+                    android:onClick="onSeeClassResultsClick"/>
 
                 <TextView
                     android:id="@+id/resultsText"

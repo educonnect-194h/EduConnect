@@ -14,6 +14,11 @@ public class RedFlagsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_red_flags);
     }
 
+    public void onSeeStudentHistoryClick(View v){
+        Intent intent = new Intent(getApplicationContext(), StudentHistoryActivity.class);
+        startActivity(intent);
+    }
+
     public void onMessageStudentClick(View v) {
         TextView name = findViewById(R.id.tvStudentName);
 

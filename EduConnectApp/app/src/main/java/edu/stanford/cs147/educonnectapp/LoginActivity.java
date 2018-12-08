@@ -21,13 +21,9 @@ import java.io.ByteArrayOutputStream;
 
 public class LoginActivity extends AppCompatActivity {
     public static final String PREFERENCES_NAME = "SharedPrefsFile";
-    Button studentLogin;
-    EditText username;
-    EditText password;
     EditText description;
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
-    TextView textEncode;
 
 
     @Override
@@ -123,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void onStudentSubmitClick(View v){
+    public void onSubmitClick(View v){
         Intent myIntent = new Intent(getBaseContext(), SubmittedActivity.class);
         startActivity(myIntent);
     }
@@ -139,8 +135,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(nextPage);
     }
 
-    public void onClassResultsClick(View v){
+    public void onSeeClassResultsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
+        myIntent.putExtra("current", true);
         startActivity(myIntent);
     }
 
@@ -183,7 +180,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             setContentView(R.layout.activity_class_list);
         }else if(true){
-            setContentView(R.layout.activity_student_history);
+            setContentView(R.layout.activity_class_list);
         } else{
             setContentView(R.layout.activity_class_list);
         }
@@ -286,6 +283,16 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onGraphButtonClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentDetailedResultsActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onSeeStudentHistoryClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), StudentHistoryActivity.class);
+        startActivity(intent);
+    }
+
     public void onMessageStudentClick(View v) {
         TextView name = findViewById(R.id.tvStudentName);
 
@@ -293,6 +300,11 @@ public class LoginActivity extends AppCompatActivity {
         i.putExtra("senderName", name.getText());
 
         startActivity(i);
+    }
+
+    public void studentYourHistoryClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
+        startActivity(myIntent);
     }
 
 }

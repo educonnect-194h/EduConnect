@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".StudentDetailedResultsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thank you for submitting!"
+            android:text="March 28, 2018"
             android:textSize="25dp"
             android:textColor="@color/darkGray"
             android:fontFamily="@font/avenir"
@@ -48,7 +48,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:text="Your teacher is feeling..."
+            android:text="Jailene was feeling..."
             android:textSize="18dp"
             android:fontFamily="@font/avenir"
             android:layout_marginLeft="20dp"
@@ -56,14 +56,14 @@
 
         <!-- teacher emoji -->
         <ImageView
-            android:id="@+id/teacherEmoji"
+            android:id="@+id/studentEmoji"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/very_sad_emoji_icon_png" />
 
         <!-- conjunction... -->
         <TextView
-            android:id="@+id/teacherSpinner"
+            android:id="@+id/studentSpinner"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:text="but..."
@@ -74,7 +74,7 @@
 
         <!-- explanation -->
         <TextView
-            android:id="@+id/teacherResponse"
+            android:id="@+id/studentResponse"
             android:layout_width="300dp"
             android:layout_height="88dp"
             android:text="&quot;I'm excited to play a game I made for the class today!&quot;"
@@ -105,26 +105,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Return to Dashboard"
+                android:text="Return to Graph"
                 android:textColor="@color/background"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="50dp"
                 android:layout_centerVertical="true"/>
 
         </RelativeLayout>
 
 
-        <!-- wholesome message -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Remember: your teacher is always available to chat more - just communicate over messages or in person!"
-            android:fontFamily="@font/avenir"
-            android:textSize="14dp"
-            android:padding="30dp"
-            android:gravity="bottom"/>
 
     </LinearLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
