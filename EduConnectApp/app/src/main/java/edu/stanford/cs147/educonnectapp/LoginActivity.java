@@ -294,4 +294,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void studentYourHistoryClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
+        startActivity(myIntent);
+    }
+
 }

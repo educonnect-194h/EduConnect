@@ -180,7 +180,8 @@
                     android:paddingLeft="20dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/history"
-                    android:tint="@color/darkGray" />
+                    android:tint="@color/darkGray"
+                    android:onClick="studentYourHistoryClick"/>
 
                 <TextView
                     android:id="@+id/historyText"
