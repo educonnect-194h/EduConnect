@@ -63,6 +63,9 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
         editor.putString("teacherDescriptionText", descriptionText);
+        Spinner conjunction = findViewById(id.conjunction_spinner2);
+        String conjunctionText = conjunction.getSelectedItem().toString();
+        editor.putString("teacherConjunction", conjunctionText);
         editor.apply();
         Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);
         TextView header = findViewById(R.id.header);

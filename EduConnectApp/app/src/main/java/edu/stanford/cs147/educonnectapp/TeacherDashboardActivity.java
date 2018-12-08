@@ -79,7 +79,7 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void onClassResultsClick(View v){
+    public void onSeeClassResultsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
         myIntent.putExtra("current", true);
         startActivity(myIntent);
