@@ -11,37 +11,32 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SubmittedActivity extends AppCompatActivity {
-    TextView teacherResponse;
-    ImageView teacherEmoji;
-    TextView teacherConjunction;
+public class StudentDetailedResultsActivity extends AppCompatActivity {
+    TextView studentResponse;
+    ImageView studentEmoji;
     public static final String PREFERENCES_NAME = "SharedPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submitted);
-        teacherResponse = findViewById(R.id.teacherResponse);
+        setContentView(R.layout.activity_student_detailed_results);
+        studentResponse = findViewById(R.id.studentResponse);
         SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
-        String restoredText = prefs.getString("teacherDescriptionText", "I'm excited to play this game I made for the class today!");
-        teacherResponse.setText(restoredText);
-        String restoredConjunction = prefs.getString("teacherConjunction", "but...");
-        teacherConjunction = findViewById(R.id.teacherSpinner);
-        teacherConjunction.setText(restoredConjunction);
+        String restoredText = prefs.getString("studentDescriptionText", "No teacher response yet");
+        studentResponse.setText(restoredText);
 
-
-        String previouslyEncodedImage = prefs.getString("emojiId", "");
+        String previouslyEncodedImage = prefs.getString("studentEmojiId", "");
 
         if( !previouslyEncodedImage.equalsIgnoreCase("") ){
-            teacherEmoji = findViewById(R.id.teacherEmoji);
+            studentEmoji = findViewById(R.id.studentEmoji);
             byte[] b = Base64.decode(previouslyEncodedImage, Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
-            teacherEmoji.setImageBitmap(bitmap);
+            studentEmoji.setImageBitmap(bitmap);
         }
     }
 
     public void onBackToDashClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
         myIntent.putExtra("Submitted", true);
         startActivity(myIntent);
     }
