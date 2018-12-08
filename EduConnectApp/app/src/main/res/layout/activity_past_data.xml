@@ -53,7 +53,8 @@
                     android:layout_height="wrap_content"
                     android:text="Dashboard"
                     android:textSize="10dp"
-                    android:textColor="@color/background" />
+                    android:textColor="@color/background"
+                    android:fontFamily="@font/avenir"/>
             </LinearLayout>
         </RelativeLayout>
 

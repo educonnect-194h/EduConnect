@@ -108,7 +108,8 @@
                 android:text="Return to Dashboard"
                 android:textColor="@color/background"
                 android:layout_marginLeft="45dp"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/avenir"/>
 
         </RelativeLayout>
 

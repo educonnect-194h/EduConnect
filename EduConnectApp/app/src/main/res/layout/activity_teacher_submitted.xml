@@ -35,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:fontFamily="@font/avenir"/>
 
         <!-- Thank you for submitting -->
         <TextView
@@ -79,7 +80,8 @@
                     android:text="Edit Response"
                     android:textColor="@color/background"
                     android:layout_marginLeft="45dp"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/avenir"/>
             </RelativeLayout>
 
             <!-- Return to Dashboard -->
@@ -106,7 +108,8 @@
                     android:text="Return to Dashboard"
                     android:textColor="@color/background"
                     android:layout_marginLeft="45dp"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/avenir"/>
 
             </RelativeLayout>
 

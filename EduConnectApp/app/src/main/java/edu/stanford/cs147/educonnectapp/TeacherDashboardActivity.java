@@ -80,8 +80,10 @@ public class TeacherDashboardActivity extends AppCompatActivity {
     }
 
     public void onSeeClassResultsClick(View v){
+        TextView header = findViewById(R.id.header);
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
         myIntent.putExtra("current", true);
+        myIntent.putExtra("header", header.getText());
         startActivity(myIntent);
     }
 

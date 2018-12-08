@@ -36,12 +36,15 @@ public class ClassResultsActivity extends AppCompatActivity {
             RelativeLayout flaggedStudents = findViewById(R.id.flaggedStudents);
             flaggedStudents.setVisibility(View.GONE);
         }else{
-            TextView header = findViewById(R.id.title);
+            TextView header = findViewById(R.id.header);
             String today = months[Calendar.getInstance().get(Calendar.MONTH)] + " " + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + ", " + Calendar.getInstance().get(Calendar.YEAR);
             TextView date = findViewById(R.id.date);
             header.setText(getIntent().getStringExtra("header"));
             date.setText(today);
         }
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onRedFlagsClick(View v){
@@ -55,7 +58,9 @@ public class ClassResultsActivity extends AppCompatActivity {
     }
 
     public void onMoreDetailsClick(View v){
+        TextView date = findViewById(R.id.date);
         Intent myIntent = new Intent(getBaseContext(), DataBreakdownActivity.class);
+        myIntent.putExtra("date", date.getText());
         startActivity(myIntent);
     }
 

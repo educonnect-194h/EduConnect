@@ -9,8 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         android:orientation="vertical"
-        android:background="@color/background">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <!-- Status Bar Label -->
         <RelativeLayout
@@ -26,41 +28,755 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:src="@drawable/paly_logo"
-                android:tint="#fff"/>
+                android:tint="#fff" />
         </RelativeLayout>
 
         <!-- title space -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/class_section">
+            android:background="@drawable/class_section"
+            android:orientation="vertical">
 
             <!-- Title -->
             <TextView
                 android:id="@+id/title"
-                android:layout_below="@id/statusBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Data Breakdown"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:textColor="@color/darkGray"
+                android:layout_below="@id/statusBar"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/avenir"/>
+                android:fontFamily="@font/avenir"
+                android:text="Data Breakdown"
+                android:textColor="@color/darkGray"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_below="@id/statusBar"
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1 student"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginLeft="20dp"
+                android:layout_below="@id/date"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/avenir"/>
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/avenir"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- emotion section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/avenir"
+                    android:text="7 Students"
+                    android:textColor="@color/background"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/neutral_face_emoji" />
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/class_section"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Jailene Miranda-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Jailene Miranda"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Sanura N'Jaka-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Sanura N'Jaka"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Jorge Avelar -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Jorge Avelar"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Jorge Mercado -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Jorge Mercado"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Jomo Arcibal -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Jomo Arcibal"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Imanni Grullon -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Imanni Grullon"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Irie Evans -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Irie Evans"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <!-- emotion 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/avenir"
+                    android:text="6 Students"
+                    android:textColor="@color/background"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/relieved_emoji" />
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/class_section"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Eva Hoffman -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Eva Hoffman"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Kristina Inouye -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Kristina Inouye"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Omar Ceja -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Omar Ceja"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Robel Daniel -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Robel Daniel"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Ryan Kirk -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Ryan Kirk"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Carolyn Lee -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Carolyn Lee"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- emotion section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/avenir"
+                    android:text="3 Students"
+                    android:textColor="@color/background"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/sad_face_emoji" />
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/class_section"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Paulina Reyes -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Paulina Reyes"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Emily Michels -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Emily Michels"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Matthew Smith -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Matthew Smith"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- emotion section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/avenir"
+                    android:text="8 Students"
+                    android:textColor="@color/background"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/dead_emoji" />
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/class_section"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Hannah Leou -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Hannah Leou"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Julia Wong -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Julia Wong"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Sean White -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Sean White"
+                            android:textColor="@color/darkGray" />
+                    </LinearLayout>
+
+                    <!-- Leo Parsons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Leo Parsons"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Pablo Garcia -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Pablo Garcia"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Helen Antonoplis -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Helen Antonoplis"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Kaleb Morris -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_male"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Kaleb Morris"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+
+                    <!-- Mary Nguyen -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_female"
+                            android:tint="@color/darkGray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir"
+                            android:text="Mary Nguyen"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
     </LinearLayout>

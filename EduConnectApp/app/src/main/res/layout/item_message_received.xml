@@ -26,7 +26,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="24dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/avenir"/>
 
     <TextView
         android:id="@+id/text_message_body"
@@ -40,7 +41,8 @@
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@+id/text_message_name"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        android:fontFamily="@font/avenir"/>
 
     <TextView
         android:id="@+id/text_message_time"
@@ -50,6 +52,7 @@
         android:textSize="10sp"
         app:layout_constraintLeft_toRightOf="@+id/text_message_body"
         android:layout_marginLeft="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/text_message_body" />
+        app:layout_constraintBottom_toBottomOf="@+id/text_message_body"
+        android:fontFamily="@font/avenir"/>
 
 </android.support.constraint.ConstraintLayout>

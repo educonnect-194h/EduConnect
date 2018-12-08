@@ -19,7 +19,8 @@
         android:textColor="#ffffff"
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/avenir"/>
 
     <TextView
         android:id="@+id/text_message_time"
@@ -29,6 +30,7 @@
         android:textSize="10sp"
         android:layout_marginRight="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/text_message_body"
-        app:layout_constraintRight_toLeftOf="@+id/text_message_body" />
+        app:layout_constraintRight_toLeftOf="@+id/text_message_body"
+        android:fontFamily="@font/avenir"/>
 
 </android.support.constraint.ConstraintLayout>

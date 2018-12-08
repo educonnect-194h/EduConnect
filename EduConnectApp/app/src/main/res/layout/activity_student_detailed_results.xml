@@ -108,7 +108,8 @@
                 android:text="Return to Graph"
                 android:textColor="@color/background"
                 android:layout_marginLeft="50dp"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/avenir"/>
 
         </RelativeLayout>
 

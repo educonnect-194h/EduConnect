@@ -110,7 +110,8 @@
                     android:layout_height="100dp"
                     android:text="Based on our metrics, collected data shows that Jailene's responses have been downward trending since Oct. 12, 2018.  Checking in with her would be a good next step."
                     android:textSize="12dp"
-                    android:layout_marginLeft="15dp" />
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/avenir"/>
 
             </LinearLayout>
 
@@ -147,7 +148,8 @@
                         android:textSize="16dp"
                         android:layout_centerVertical="true"
                         android:paddingLeft="53dp"
-                        android:textColor="@color/background"/>
+                        android:textColor="@color/background"
+                        android:fontFamily="@font/avenir"/>
 
                 </RelativeLayout>
 
@@ -175,7 +177,8 @@
                         android:textSize="16dp"
                         android:textColor="@color/background"
                         android:paddingLeft="50dp"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/avenir"/>
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
