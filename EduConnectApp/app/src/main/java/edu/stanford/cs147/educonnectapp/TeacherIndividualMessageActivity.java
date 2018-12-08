@@ -27,20 +27,25 @@ public class TeacherIndividualMessageActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String name = i.getExtras().getString("senderName");
-        message = i.getExtras().getString("message");
 
         mSenderName = findViewById(R.id.tvName);
         mSenderName.setText(name);
 
+        message = i.getExtras().getString("message");
+
+        messages = new ArrayList<>();
+
+        if (!message.equals("Sending a red flag message......")) {
 //        if (i.getExtras().get("messagesArray") != null) {
 //            Toast.makeText(getApplicationContext(), "array not null?", Toast.LENGTH_SHORT).show();
 //            messages = (ArrayList<BaseMessage>) i.getExtras().getSerializable("messagesArray");
 //        } else {
-       //     Toast.makeText(getApplicationContext(), "array null ugh", Toast.LENGTH_SHORT).show();
-            messages = new ArrayList<>();
+            //     Toast.makeText(getApplicationContext(), "array null ugh", Toast.LENGTH_SHORT).show();
+
             BaseMessage baseMessage = new BaseMessage(name, message, 12);
             messages.add(baseMessage);
-  //      }
+            //      }
+        }
 
         mMessageRecycler = findViewById(R.id.reyclerview_message_list);
         mMessageAdapter = new MessageListAdapter(this, messages);

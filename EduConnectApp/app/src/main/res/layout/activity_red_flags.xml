@@ -73,6 +73,7 @@
             android:background="@drawable/class_section">
 
             <TextView
+                android:id="@+id/tvStudentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -132,12 +133,12 @@
                         android:layout_height="50dp"
                         android:layout_gravity="start"
                         android:background="@drawable/dashboard_button_available"
-                        android:onClick="onSendMessageClick"
+                        android:onClick="onMessageStudentClick"
                         android:src="@drawable/messages"
                         android:scaleType="fitStart"
                         android:layout_marginRight="6dp"
                         android:padding="7dp"
-                        android:tint="@color/background"/>
+                        android:tint="@color/background" />
 
                     <TextView
                         android:layout_width="wrap_content"
