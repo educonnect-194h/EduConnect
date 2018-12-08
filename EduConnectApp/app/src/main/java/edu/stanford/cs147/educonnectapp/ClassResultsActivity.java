@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Button;
+
 
 import java.util.Calendar;
 
@@ -49,5 +52,65 @@ public class ClassResultsActivity extends AppCompatActivity {
     public void goToCalendar(View v){
         Intent myIntent = new Intent(getBaseContext(), PastDataActivity.class);
         startActivity(myIntent);
+    }
+
+    public void onMoreDetailsClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), DataBreakdownActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onPieClick(View v){
+        Button pieButton = findViewById(R.id.pieChartButton);
+        Button histogramButton = findViewById(R.id.histogramButton);
+        Button boxPlotButton = findViewById(R.id.boxPlotButton);
+
+        pieButton.setBackgroundResource(R.drawable.data_option_chosen);
+        histogramButton.setBackgroundResource(R.drawable.data_option);
+        boxPlotButton.setBackgroundResource(R.drawable.data_option);
+
+        ImageView pieChart = findViewById(R.id.piechart);
+        ImageView histogram = findViewById(R.id.histogram);
+        ImageView boxPlot = findViewById(R.id.boxplot);
+
+        pieChart.setVisibility(View.VISIBLE);
+        histogram.setVisibility(View.GONE);
+        boxPlot.setVisibility(View.GONE);
+
+    }
+
+    public void onHistogramClick(View v){
+        Button pieButton = findViewById(R.id.pieChartButton);
+        Button histogramButton = findViewById(R.id.histogramButton);
+        Button boxPlotButton = findViewById(R.id.boxPlotButton);
+
+        pieButton.setBackgroundResource(R.drawable.data_option);
+        histogramButton.setBackgroundResource(R.drawable.data_option_chosen);
+        boxPlotButton.setBackgroundResource(R.drawable.data_option);
+
+        ImageView pieChart = findViewById(R.id.piechart);
+        ImageView histogram = findViewById(R.id.histogram);
+        ImageView boxPlot = findViewById(R.id.boxplot);
+
+        pieChart.setVisibility(View.GONE);
+        histogram.setVisibility(View.VISIBLE);
+        boxPlot.setVisibility(View.GONE);
+    }
+
+    public void onBoxPlotClick(View v){
+        Button pieButton = findViewById(R.id.pieChartButton);
+        Button histogramButton = findViewById(R.id.histogramButton);
+        Button boxPlotButton = findViewById(R.id.boxPlotButton);
+
+        pieButton.setBackgroundResource(R.drawable.data_option);
+        histogramButton.setBackgroundResource(R.drawable.data_option);
+        boxPlotButton.setBackgroundResource(R.drawable.data_option_chosen);
+
+        ImageView pieChart = findViewById(R.id.piechart);
+        ImageView histogram = findViewById(R.id.histogram);
+        ImageView boxPlot = findViewById(R.id.boxplot);
+
+        pieChart.setVisibility(View.GONE);
+        histogram.setVisibility(View.GONE);
+        boxPlot.setVisibility(View.VISIBLE);
     }
 }

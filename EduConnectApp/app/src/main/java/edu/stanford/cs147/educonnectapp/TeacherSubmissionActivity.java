@@ -22,6 +22,8 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.io.ByteArrayOutputStream;
 import java.util.Map;
 
@@ -50,6 +52,9 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onTeacherSubmitClick(View v){
@@ -59,7 +64,9 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
         editor.putString("teacherDescriptionText", descriptionText);
         editor.apply();
-        Intent nextPage = new Intent(getBaseContext(), TeacherSubmittedActivity.class);
+        Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);
+        TextView header = findViewById(R.id.header);
+        nextPage.putExtra("header", header.getText());
         startActivity(nextPage);
     }
 
