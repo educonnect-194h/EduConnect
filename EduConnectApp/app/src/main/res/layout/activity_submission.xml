@@ -1,316 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SubmissionScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubmissionActivity">
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:windowSoftInputMode="adjustResize">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/background">
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
 
-        <!-- Status Bar Label -->
-        <RelativeLayout
-            android:id="@+id/statusBar"
+        tools:context=".SubmissionActivity">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center_horizontal"
-                android:padding="10dp"
-                android:src="@drawable/paly_logo"
-                android:tint="#fff"/>
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Today, I feel..."
-            android:textSize="25dp"
-            android:textColor="@color/darkGray"
-            android:layout_margin="20dp"
-            android:fontFamily="@font/avenir"/>
-
-        <!-- emojis -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="660dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/background"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical"
-            android:layout_gravity="center_horizontal">
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
-            <!-- first row -->
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <!-- Status Bar Label -->
+            <RelativeLayout
+                android:id="@+id/statusBar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <!-- grinning emoji -->
-                <ImageButton
-                    android:id="@+id/grin_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/grinning_emoji_with_smiling_eyes"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:src="@drawable/paly_logo"
+                    android:tint="#fff" />
+            </RelativeLayout>
 
-                <!-- soft smile emoji -->
-                <ImageButton
-                    android:id="@+id/smiley_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/slightly_smiling_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/avenir"
+                android:text="Today, I feel..."
+                android:textColor="@color/darkGray"
+                android:textSize="25dp" />
 
-                <!-- relieved emoji -->
-                <ImageButton
-                    android:id="@+id/relieved_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/relieved_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- mr cool emoji -->
-                <ImageButton
-                    android:id="@+id/sunglasses_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/sunglasses_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- delighted emoji -->
-                <ImageButton
-                    android:id="@+id/delighted_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/hugging_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- delighted emoji -->
-                <ImageButton
-                    android:id="@+id/dead_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/dead_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-            </LinearLayout>
-
-            <!-- second row -->
+            <!-- emojis -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
-                <!-- neutral emoji -->
-                <ImageButton
-                    android:id="@+id/neutral_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/neutral_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                <!-- first row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <!-- upside down emoji -->
-                <ImageButton
-                    android:id="@+id/upsidedown_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/upside_down_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                    <!-- grinning emoji -->
+                    <ImageButton
+                        android:id="@+id/grin_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/grinning_emoji_with_smiling_eyes" />
 
-                <!-- sad face -->
-                <ImageButton
-                    android:id="@+id/sad_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/sad_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                    <!-- soft smile emoji -->
+                    <ImageButton
+                        android:id="@+id/smiley_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/slightly_smiling_face_emoji" />
 
-                <!-- angry emoji -->
-                <ImageButton
-                    android:id="@+id/angry_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/very_angry_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                    <!-- relieved emoji -->
+                    <ImageButton
+                        android:id="@+id/relieved_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/relieved_emoji" />
 
-                <!-- hella sad emoji -->
-                <ImageButton
-                    android:id="@+id/vsad_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:onClick="onEmojiClick"
-                    android:src="@drawable/very_sad_emoji_icon_png"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                    <!-- mr cool emoji -->
+                    <ImageButton
+                        android:id="@+id/sunglasses_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sunglasses_emoji" />
 
-                <!-- nerd emoji -->
-                <ImageButton
-                    android:id="@+id/nerd_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/nerd_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                    <!-- delighted emoji -->
+                    <ImageButton
+                        android:id="@+id/delighted_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/hugging_face_emoji" />
+
+                    <!-- delighted emoji -->
+                    <ImageButton
+                        android:id="@+id/dead_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/dead_emoji" />
+                </LinearLayout>
+
+                <!-- second row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- neutral emoji -->
+                    <ImageButton
+                        android:id="@+id/neutral_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/neutral_face_emoji" />
+
+                    <!-- upside down emoji -->
+                    <ImageButton
+                        android:id="@+id/upsidedown_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/upside_down_face_emoji" />
+
+                    <!-- sad face -->
+                    <ImageButton
+                        android:id="@+id/sad_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sad_face_emoji" />
+
+                    <!-- angry emoji -->
+                    <ImageButton
+                        android:id="@+id/angry_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/very_angry_emoji" />
+
+                    <!-- hella sad emoji -->
+                    <ImageButton
+                        android:id="@+id/vsad_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/very_sad_emoji_icon_png" />
+
+                    <!-- nerd emoji -->
+                    <ImageButton
+                        android:id="@+id/nerd_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nerd_emoji" />
+                </LinearLayout>
+
+                <!-- third row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- confused emoji -->
+                    <ImageButton
+                        android:id="@+id/confused_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/confounded_face_emoji" />
+
+                    <!-- nervous emoji -->
+                    <ImageButton
+                        android:id="@+id/nervous_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/cold_sweat_emoji" />
+
+                    <!-- crying emoji -->
+                    <ImageButton
+                        android:id="@+id/crying_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/crying_face_emoji" />
+
+                    <!-- sick emoji -->
+                    <ImageButton
+                        android:id="@+id/sick_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sick_emoji" />
+
+                    <!-- snoring emoji -->
+                    <ImageButton
+                        android:id="@+id/sleeping_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sleeping_with_snoring_emoji" />
+
+                    <!-- surprised emoji -->
+                    <ImageButton
+                        android:id="@+id/surprised_emoji"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@color/background"
+                        android:onClick="onEmojiClick"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/surprised_emoji" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <!-- third row -->
+            <!-- expanding words spinner -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:orientation="horizontal">
 
-                <!-- confused emoji -->
-                <ImageButton
-                    android:id="@+id/confused_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/confounded_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- nervous emoji -->
-                <ImageButton
-                    android:id="@+id/nervous_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/cold_sweat_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- crying emoji -->
-                <ImageButton
-                    android:id="@+id/crying_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/crying_face_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- sick emoji -->
-                <ImageButton
-                    android:id="@+id/sick_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/sick_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- snoring emoji -->
-                <ImageButton
-                    android:id="@+id/sleeping_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/sleeping_with_snoring_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
-
-                <!-- surprised emoji -->
-                <ImageButton
-                    android:id="@+id/surprised_emoji"
-                    android:scaleType="fitCenter"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/surprised_emoji"
-                    android:onClick="onEmojiClick"
-                    android:background="@color/background"
-                    android:padding="7dp"/>
+                <Spinner
+                    android:id="@+id/conjunction_spinner"
+                    android:layout_width="155dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown" />
             </LinearLayout>
 
-        </LinearLayout>
+            <!-- text response - expand answer -->
+            <EditText
+                android:id="@+id/descriptionEt"
+                android:layout_width="340dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edit_text_background"
+                android:ems="10"
+                android:fontFamily="@font/avenir"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:maxLines="5"
+                android:minLines="2"
+                android:scrollbars="vertical" />
 
-        <!-- expanding words spinner -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="20dp">
 
-            <Spinner
-                android:id="@+id/conjunction_spinner"
-                android:layout_width="155dp"
+            <!-- submit button -->
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
-                />
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="40dp"
+                android:background="@drawable/dashboard_button_available"
+                android:fontFamily="@font/avenir"
+                android:onClick="onSubmitClick"
+                android:text="submit"
+                android:textColor="@color/background" />
         </LinearLayout>
-
-        <!-- text response - expand answer -->
-        <EditText
-            android:id="@+id/descriptionEt"
-            android:layout_width="340dp"
-            android:layout_height="130dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:lines="3"
-            android:minLines="2"
-            android:gravity="top|left"
-            android:maxLines="5"
-            android:scrollbars="vertical"
-            android:background="@drawable/edit_text_background"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/avenir"/>
-
-
-        <!-- submit button -->
-        <Button
-            android:id="@+id/submitBtn"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/dashboard_button_available"
-            android:text="submit"
-            android:textColor="@color/background"
-            android:onClick="onSubmitClick"
-            android:layout_margin="40dp"
-            android:fontFamily="@font/avenir"/>
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
