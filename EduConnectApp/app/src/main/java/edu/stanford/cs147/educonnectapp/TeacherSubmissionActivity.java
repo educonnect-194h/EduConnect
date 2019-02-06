@@ -9,16 +9,19 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -35,13 +38,14 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     EditText description;
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
-    TextView textEncode;
+    ScrollView SubmissionScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_teacher_submission);
         description = findViewById(R.id.teacherDescriptionEt);
+        SubmissionScrollView = findViewById(id.TeacherSubmissionScrollView);
 
 
         Spinner spinner = findViewById(R.id.conjunction_spinner2);
@@ -52,9 +56,27 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+        description.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1)
+            {
+                focusOnView();
+                return false;
+            }
+        });
 
         TextView header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
+    }
+
+    private void focusOnView(){
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                SubmissionScrollView.scrollTo(0, description.getBottom());
+            }
+        });
     }
 
     public void onTeacherSubmitClick(View v){
