@@ -29,8 +29,8 @@ public class StudentMessagesActivity extends AppCompatActivity {
         mSenderName.setText("Ms. Reyes");
 
         messages = new ArrayList<>();
-        BaseMessage baseMessage1 = new BaseMessage("Jailene Miranda", "Hi, I'm feeling really sad today because my kitten died. Can we chat after class?", 12);
-        BaseMessage baseMessage2 = new BaseMessage("Ms. Reyes", "Hi, Jailene! I'm sorry to hear that! Please come to my office after class.", 12);
+        BaseMessage baseMessage1 = new BaseMessage("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
+        BaseMessage baseMessage2 = new BaseMessage("Ms. Reyes", "Hi, Jailene, I'm really sorry to hear that, please let me know how I can help and if you want to talk!", 12);
         messages.add(baseMessage1);
         messages.add(baseMessage2);
 

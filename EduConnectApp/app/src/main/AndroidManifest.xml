@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".TeacherConfirmedSubmission"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
@@ -39,9 +39,10 @@
         <activity android:name=".TeacherMessagesListActivity" />
         <activity android:name=".TeacherIndividualMessageActivity" />
         <activity android:name=".StudentMessagesActivity" />
-        <activity android:name=".StudentHistoryActivity"/>
-        <activity android:name=".RosterActivity"/>
+        <activity android:name=".StudentHistoryActivity" />
+        <activity android:name=".RosterActivity" />
         <activity android:name=".StudentDetailedResultsActivity" />
+
     </application>
 
 </manifest>

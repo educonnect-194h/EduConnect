@@ -22,8 +22,8 @@ public class TeacherMessagesListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher_messages_list);
 
         convoList = new ArrayList<>();
-        ConversationPreview convo1 = new ConversationPreview("Jailene Miranda", "Hi, I'm feeling really sad today because my kitten died. Can we chat after class?", 12);
-        ConversationPreview convo2 = new ConversationPreview("Sanura N'Jaka", "Dude I'm really annoyed at life right now.", 12);
+        ConversationPreview convo1 = new ConversationPreview("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
+        ConversationPreview convo2 = new ConversationPreview("Sanura N'Jaka", "I'm having a really hard time understanding this topic, math sucks.", 12);
         convoList.add(convo1);
         convoList.add(convo2);
 

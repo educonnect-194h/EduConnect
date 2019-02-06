@@ -155,6 +155,10 @@ public class LoginActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
         startActivity(myIntent);
     }
+    public void onFinalSubmit(View v){
+        Intent myIntent = new Intent(getBaseContext(), TeacherConfirmedSubmission.class);
+        startActivity(myIntent);
+    }
 
     public void studentMessagesClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentMessagesActivity.class);

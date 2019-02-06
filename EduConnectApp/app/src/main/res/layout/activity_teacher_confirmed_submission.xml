@@ -48,51 +48,12 @@
             android:layout_marginVertical="50dp"
             android:fontFamily="@font/avenir"
             android:gravity="center_horizontal"
-            android:text="Your students will see:"
+            android:text="Thank you for submitting!"
             android:textColor="@color/darkGray"
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        <!-- your teacher is feeling... -->
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/avenir"
-            android:text="Your teacher is feeling..."
-            android:textSize="18dp" />
 
-        <!-- teacher emoji -->
-        <ImageView
-            android:id="@+id/teacherEmoji"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/very_sad_emoji_icon_png" />
-
-        <!-- conjunction... -->
-        <TextView
-            android:id="@+id/teacherSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/avenir"
-            android:text="but..."
-            android:textSize="18dp" />
-
-        <!-- explanation -->
-        <TextView
-            android:id="@+id/teacherResponse"
-            android:layout_width="300dp"
-            android:layout_height="88dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/avenir"
-            android:text="&quot;I'm excited to play a game I made for the class today!&quot;"
-            android:textAlignment="center"
-            android:textColor="@color/darkGray"
-            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,44 +61,17 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <!-- Edit Response -->
-            <RelativeLayout
-                android:layout_width="190dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="8dp">
-
-                <ImageButton
-                    android:id="@+id/btnEditResponse"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/dashboard_button_available"
-                    android:paddingVertical="12dp"
-                    android:paddingLeft="11dp"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/edit"
-                    android:tint="@color/background" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="45dp"
-                    android:fontFamily="@font/avenir"
-                    android:text="Edit Response"
-                    android:textColor="@color/background" />
-            </RelativeLayout>
-
-            <!-- Confirm Submission and Return to Dashboard-->
+            <!-- Return to Dashboard-->
             <RelativeLayout
                 android:layout_width="190dp"
                 android:layout_height="45dp">
 
                 <ImageButton
-                    android:id="@+id/btnFinalSubmit"
+                    android:id="@+id/btnBackToDashboard2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/dashboard_button_available"
-                    android:onClick="onFinalSubmit"
+                    android:onClick="onBackToDashClick"
                     android:paddingVertical="12dp"
                     android:paddingLeft="10dp"
                     android:scaleType="fitStart"
@@ -150,7 +84,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="45dp"
                     android:fontFamily="@font/avenir"
-                    android:text="Submit"
+                    android:text="Return to Dashboard"
                     android:textColor="@color/background" />
 
             </RelativeLayout>
