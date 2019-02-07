@@ -54,7 +54,7 @@
                 android:textColor="@color/darkGray"
                 android:textSize="25dp" />
 
-            <!-- emojis -->
+            <!-- emojis Na He: (SLIDER WOULD GO WITHIN THIS LAYOUT!) -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
+                    <!-- Na He: feel free to remove everything below this and
+                    replace it with the slider! We'll keep the teacher submission page
+                    if we need to reference the old stuff -->
                     <!-- grinning emoji -->
                     <ImageButton
                         android:id="@+id/grin_emoji"
