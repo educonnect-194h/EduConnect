@@ -94,6 +94,8 @@ public class TeacherDashboardActivity extends AppCompatActivity {
 
     public void onMessagesClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherMessagesListActivity.class);
+        TextView header = findViewById(R.id.header);
+        myIntent.putExtra("header", header.getText());
         startActivity(myIntent);
     }
     public void onRosterClick(View v){

@@ -53,6 +53,8 @@
         </RelativeLayout>
 
         <!-- Title -->
+
+
         <TextView
             android:id="@+id/title"
             android:layout_below="@id/statusBar"
@@ -64,6 +66,8 @@
             android:textColor="@color/darkGray"
             android:layout_margin="15dp"
             android:fontFamily="@font/avenir"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,10 +16,14 @@ public class TeacherMessagesListActivity extends AppCompatActivity {
     ArrayList<ConversationPreview> convoList;
     ArrayList<BaseMessage> messages;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_messages_list);
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
 
         convoList = new ArrayList<>();
         ConversationPreview convo1 = new ConversationPreview("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
@@ -42,6 +46,8 @@ public class TeacherMessagesListActivity extends AppCompatActivity {
 
         mConversationRecycler.setLayoutManager(new LinearLayoutManager(this));
         mConversationRecycler.setAdapter(mConversationAdapter);
+
+
     }
 
     public void openConversation(ConversationPreview convo) {

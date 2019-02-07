@@ -124,6 +124,7 @@
                     android:layout_marginLeft="45dp"
                     android:fontFamily="@font/avenir"
                     android:text="Edit Response"
+                    android:onClick="onEditResponse"
                     android:textColor="@color/background" />
             </RelativeLayout>
 
@@ -132,25 +133,15 @@
                 android:layout_width="190dp"
                 android:layout_height="45dp">
 
-                <ImageButton
+                <Button
                     android:id="@+id/btnFinalSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/dashboard_button_available"
-                    android:onClick="onFinalSubmit"
-                    android:paddingVertical="12dp"
-                    android:paddingLeft="10dp"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/back_arrow"
-                    android:tint="@color/background" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="45dp"
                     android:fontFamily="@font/avenir"
-                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:text="Confirm Submission"
+                    android:onClick="onFinalSubmit"
                     android:textColor="@color/background" />
 
             </RelativeLayout>

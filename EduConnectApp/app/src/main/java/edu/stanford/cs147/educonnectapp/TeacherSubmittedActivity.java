@@ -3,7 +3,9 @@ package edu.stanford.cs147.educonnectapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -48,10 +50,14 @@ public class TeacherSubmittedActivity extends AppCompatActivity {
 
     public void onFinalSubmit(View v){
         TextView header = findViewById(R.id.header);
-
         Intent myIntent = new Intent(getApplicationContext(), TeacherConfirmedSubmission.class);
         myIntent.putExtra("header", header.getText());
         myIntent.putExtra("Submitted", true);
         startActivity(myIntent);
+    }
+
+    public void onEditResponse(View v){
+        this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
+        this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
     }
 }

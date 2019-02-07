@@ -29,7 +29,6 @@ public class SubmittedActivity extends AppCompatActivity {
         teacherConjunction = findViewById(R.id.teacherSpinner);
         teacherConjunction.setText(restoredConjunction);
 
-
         String previouslyEncodedImage = prefs.getString("emojiId", "");
 
         if( !previouslyEncodedImage.equalsIgnoreCase("") ){

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText description;
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +135,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(nextPage);
     }
 
+    public void onEditResponse(View v){
+        this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
+        this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
+    }
+
     public void onSeeClassResultsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), ClassResultsActivity.class);
         myIntent.putExtra("current", true);
@@ -143,11 +148,15 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onMessagesClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherMessagesListActivity.class);
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
         startActivity(myIntent);
     }
 
     public void onRedFlagsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
         startActivity(myIntent);
     }
 
