@@ -18,7 +18,11 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 
+import com.goodiebag.horizontalpicker.HorizontalPicker;
+
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static edu.stanford.cs147.educonnectapp.R.*;
 
@@ -36,7 +40,6 @@ public class SubmissionActivity extends AppCompatActivity {
         setContentView(layout.activity_submission);
         description = findViewById(R.id.descriptionEt);
         SubmissionScrollView = findViewById(id.SubmissionScrollView);
-
 
         Spinner spinner = findViewById(id.conjunction_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout

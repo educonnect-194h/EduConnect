@@ -112,7 +112,16 @@
                 android:layout_marginLeft="15dp"/>
 
 
+            <ImageView
+                android:id="@+id/feelButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/class_section"
+                android:scaleType="fitCenter"
+                android:src="@drawable/feelings"/>
             <!-- FEELINGS BUTTON -->
+
             <Button
                 android:id="@+id/feelingsButton"
                 android:layout_width="320dp"
