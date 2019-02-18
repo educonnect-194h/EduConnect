@@ -44,6 +44,15 @@
                     android:tint="#fff" />
             </RelativeLayout>
 
+            <!-- store class title -->
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="gone"
+                android:fontFamily="@font/avenir"/>
+
             <!--Today I feel-->
             <TextView
                 android:id="@+id/textView4"

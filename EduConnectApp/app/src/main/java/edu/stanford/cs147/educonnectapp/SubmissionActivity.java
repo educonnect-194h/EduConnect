@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 
@@ -91,6 +92,9 @@ public class SubmissionActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     private void focusOnView(){
@@ -109,6 +113,8 @@ public class SubmissionActivity extends AppCompatActivity {
         editor.putString("studentDescriptionText", descriptionText);
         editor.apply();
         Intent nextPage = new Intent(getBaseContext(), SubmittedActivity.class);
+        TextView header = findViewById(R.id.header);
+        nextPage.putExtra("header", header.getText());
         startActivity(nextPage);
     }
 }
