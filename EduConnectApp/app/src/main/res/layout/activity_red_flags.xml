@@ -55,7 +55,7 @@
                 android:layout_below="@id/statusBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1 student"
+                android:text="2 students"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
@@ -65,24 +65,12 @@
 
         </LinearLayout>
 
-
-        <!-- Flagged Student section -->
+        <!-- Text information -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/class_section">
-
-            <TextView
-                android:id="@+id/tvStudentName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Jailene Miranda"
-                android:fontFamily="@font/avenir"
-                android:textColor="@color/darkGray"
-                android:layout_marginVertical="10dp"
-                android:layout_marginLeft="10dp"/>
 
             <!-- student info -->
             <LinearLayout
@@ -90,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="30dp"
-                android:paddingLeft="10dp">
+                android:paddingLeft="10dp"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -99,89 +88,168 @@
                     android:backgroundTint="@color/darkGray"
                     android:layout_margin="10dp"/>
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/user_female"
-                    android:layout_gravity="center_vertical"
-                    android:backgroundTint="@color/darkGray" />
 
                 <TextView
-                    android:layout_width="195dp"
-                    android:layout_height="100dp"
-                    android:text="Based on our metrics, collected data shows that Jailene's responses have been downward trending since Oct. 12, 2018.  Checking in with her would be a good next step."
+                    android:layout_width="290dp"
+                    android:layout_height="70dp"
+                    android:text="Based on our metrics, collected data shows that these students' responses have been downward trending.  Checking in with them would be a good next step."
                     android:textSize="12dp"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/avenir"/>
 
             </LinearLayout>
 
-            <!-- action buttons -->
+
+        <!-- Flagged Student section -->
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Hannah Leou -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="10dp"
                 android:gravity="center"
-                android:layout_marginBottom="15dp">
+                android:orientation="vertical">
 
-                <!-- SEND MESSAGE -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user_female"
+                    android:tint="@color/darkGray" />
 
-                    <ImageButton
-                        android:id="@+id/sendMessage"
-                        android:layout_width="170dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="start"
-                        android:background="@drawable/dashboard_button_available"
-                        android:onClick="onMessageStudentClick"
-                        android:src="@drawable/messages"
-                        android:scaleType="fitStart"
-                        android:layout_marginRight="6dp"
-                        android:padding="7dp"
-                        android:tint="@color/background" />
-
-                    <TextView
+                <TextView
+                    android:layout_width="100dp"
+                    android:id="@+id/tvStudentName"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir"
+                    android:text="Jailene Miranda"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/darkGray" />
+                <!-- Action Buttons Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <!-- SEND MESSAGE -->
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Send Message"
-                        android:textSize="16dp"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="53dp"
-                        android:textColor="@color/background"
-                        android:fontFamily="@font/avenir"/>
+                        android:layout_height="wrap_content">
 
-                </RelativeLayout>
+                        <ImageButton
+                            android:id="@+id/sendMessage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/dashboard_button_available"
+                            android:onClick="onMessageStudentClick"
+                            android:padding="7dp"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/messages"
+                            android:tint="@color/background" />
 
-                <!-- STUDENT HISTORY -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    </RelativeLayout>
 
-                    <ImageButton
-                        android:id="@+id/seeStudentHistory"
-                        android:layout_width="170dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="start"
-                        android:background="@drawable/dashboard_button_available"
-                        android:onClick="onSeeStudentHistoryClick"
-                        android:src="@drawable/history"
-                        android:tint="@color/background"
-                        android:scaleType="fitStart"
-                        android:padding="8dp"/>
-
-                    <TextView
+                    <!-- STUDENT HISTORY -->
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Student History"
-                        android:textSize="16dp"
-                        android:textColor="@color/background"
-                        android:paddingLeft="50dp"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/avenir"/>
-                </RelativeLayout>
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/seeStudentHistory"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:background="@drawable/dashboard_button_available"
+                            android:onClick="onSeeStudentHistoryClick"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/history"
+                            android:tint="@color/background" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
             </LinearLayout>
+
+            <!-- Julia Wong -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user_female"
+                    android:tint="@color/darkGray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir"
+                    android:text="Julia Wong"
+                    android:textColor="@color/darkGray" />
+
+                <!-- Buttons Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <!-- SEND MESSAGE -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/sendMessage2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/dashboard_button_available"
+                            android:onClick="onMessageStudentClick"
+                            android:padding="7dp"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/messages"
+                            android:tint="@color/background" />
+
+                    </RelativeLayout>
+
+                    <!-- STUDENT HISTORY -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/seeStudentHistory2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:background="@drawable/dashboard_button_available"
+                            android:onClick="onSeeStudentHistoryClick"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/history"
+                            android:tint="@color/background" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </GridLayout>
         </LinearLayout>
 
 

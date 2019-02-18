@@ -44,6 +44,10 @@
         <activity android:name=".RosterActivity" />
         <activity android:name=".StudentDetailedResultsActivity" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="49349c3007550e76f8c36f83994d35ba0682f78a" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
