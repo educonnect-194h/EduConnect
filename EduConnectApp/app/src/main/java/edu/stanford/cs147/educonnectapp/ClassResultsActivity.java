@@ -49,8 +49,8 @@ public class ClassResultsActivity extends AppCompatActivity {
 
     public void onRedFlagsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
-        TextView header = findViewById(R.id.header);
-        header.setText(getIntent().getStringExtra("header"));
+        //TextView header = findViewById(R.id.header);
+        //header.setText(getIntent().getStringExtra("header"));
         startActivity(myIntent);
     }
 

@@ -13,8 +13,8 @@ public class RedFlagsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_red_flags);
 
-        TextView header = findViewById(R.id.header);
-        header.setText(getIntent().getStringExtra("header"));
+        //TextView header = findViewById(R.id.header);
+        //header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onSeeStudentHistoryClick(View v){

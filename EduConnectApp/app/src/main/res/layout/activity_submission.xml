@@ -159,7 +159,7 @@
 
 
                 <SeekBar
-                    android:id="@+id/sb"
+                    android:id="@+id/emojiBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:max="7"

@@ -17,14 +17,20 @@ public class StudentDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashboard);
 
+        // Make big buttons unclickable
         ImageButton historyBtn = findViewById(R.id.historyButton);
+        historyBtn.setClickable(false);
         ImageButton messagesBtn = findViewById(R.id.messagesButton);
+        messagesBtn.setClickable(false);
 
         Intent intent = this.getIntent();
         boolean submitted = false;
 
         if (intent.getExtras() != null) {
             submitted = intent.getExtras().getBoolean("Submitted");
+            TextView header = findViewById(R.id.header);
+            header.setText(getIntent().getStringExtra("header"));
+
         }
 
         if (submitted) {
