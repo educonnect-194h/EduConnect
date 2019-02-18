@@ -191,7 +191,7 @@
                 android:thumb="@drawable/tickbar" />
         </LinearLayout>
 
-        <!-- emotion section -->
+        <!-- students section -->
                 <GridLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
