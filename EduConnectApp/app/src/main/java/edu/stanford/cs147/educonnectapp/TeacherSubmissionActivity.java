@@ -21,9 +21,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -38,12 +40,14 @@ import static edu.stanford.cs147.educonnectapp.R.*;
 public class TeacherSubmissionActivity extends AppCompatActivity {
     public static final String PREFERENCES_NAME = "SharedPrefsFile";
     EditText description;
-    Boolean emojiAlreadySelected = false;
-    ImageButton oldSelectedEmoji;
+    SeekBar seekBar;
     ScrollView SubmissionScrollView;
     RadioGroup radioGroup;
     RadioButton radioButton;
     String conjunctionText;
+    int[] emojiList = new int[]{R.drawable.angry, R.drawable.sick, R.drawable.sad,
+            R.drawable.sleepy, R.drawable.neutral, R.drawable.sunglasses, R.drawable.grinning,
+            R.drawable.feisty};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,28 +56,41 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         description = findViewById(R.id.teacherDescriptionEt);
         radioGroup = findViewById(R.id.radioGroup);
 
-//        SubmissionScrollView = findViewById(id.TeacherSubmissionScrollView);
-
-
-//        Spinner spinner = findViewById(R.id.conjunction_spinner2);
-//        // Create an ArrayAdapter using the string array and a default spinner layout
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.text_options_array, android.R.layout.simple_spinner_item);
-//        // Specify the layout to use when the list of choices appears
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        // Apply the adapter to the spinner
-//        spinner.setAdapter(adapter);
-//        description.setOnTouchListener(new View.OnTouchListener()
-//        {
-//            @Override
-//            public boolean onTouch(View arg0, MotionEvent arg1)
-//            {
-//                focusOnView();
-//                return false;
-//            }
-//        });
-
         TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
+        seekBar = findViewById(R.id.teacherEmojiBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int curr_i;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                curr_i = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Drawable d = getResources().getDrawable(emojiList[curr_i]);
+                ImageView today = findViewById(id.today_emoji);
+                today.setImageDrawable(d);
+
+                Bitmap bitmap = ((BitmapDrawable) d).getBitmap();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                byte[] b = baos.toByteArray();
+
+                String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+
+                SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
+                editor.putString("emojiId", encodedImage);
+                editor.apply();
+            }
+        });
+
+        header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
     }
 
@@ -98,41 +115,11 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
         editor.putString("teacherDescriptionText", descriptionText);
-//        Spinner conjunction = findViewById(id.conjunction_spinner2);
-//        String conjunctionText = conjunction.getSelectedItem().toString();
         editor.putString("teacherConjunction", conjunctionText);
         editor.apply();
         Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);
         TextView header = findViewById(R.id.header);
         nextPage.putExtra("header", header.getText());
         startActivity(nextPage);
-    }
-
-    public void onTeacherEmojiClick(View v){
-        ImageButton emojiClicked = findViewById(v.getId());
-        if (!emojiAlreadySelected) {
-            emojiClicked.setBackgroundResource(drawable.emoji_button_background);
-            oldSelectedEmoji = emojiClicked;
-        }
-        else {
-            oldSelectedEmoji.setBackgroundResource(0);
-            emojiClicked.setBackgroundResource(drawable.emoji_button_background);
-            oldSelectedEmoji = emojiClicked;
-        }
-        emojiAlreadySelected = true;
-        Integer emojiClickedId = emojiClicked.getId();
-
-        Bitmap bitmap = ((BitmapDrawable) emojiClicked.getDrawable()).getBitmap();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] b = baos.toByteArray();
-
-        String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
-
-        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
-        editor.putString("emojiId", encodedImage);
-        editor.apply();
-
-        // Passing emoji to Student Submitted Activity (Your teacher feels...)
     }
 }
