@@ -21,6 +21,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -39,37 +41,48 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
     ScrollView SubmissionScrollView;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+    String conjunctionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_teacher_submission);
         description = findViewById(R.id.teacherDescriptionEt);
-        SubmissionScrollView = findViewById(id.TeacherSubmissionScrollView);
+        radioGroup = findViewById(R.id.radioGroup);
+
+//        SubmissionScrollView = findViewById(id.TeacherSubmissionScrollView);
 
 
-        Spinner spinner = findViewById(R.id.conjunction_spinner2);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.text_options_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        description.setOnTouchListener(new View.OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View arg0, MotionEvent arg1)
-            {
-                focusOnView();
-                return false;
-            }
-        });
+//        Spinner spinner = findViewById(R.id.conjunction_spinner2);
+//        // Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.text_options_array, android.R.layout.simple_spinner_item);
+//        // Specify the layout to use when the list of choices appears
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        // Apply the adapter to the spinner
+//        spinner.setAdapter(adapter);
+//        description.setOnTouchListener(new View.OnTouchListener()
+//        {
+//            @Override
+//            public boolean onTouch(View arg0, MotionEvent arg1)
+//            {
+//                focusOnView();
+//                return false;
+//            }
+//        });
 
         TextView header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
     }
 
+    public void checkButton(View v){
+        //get id of checked radio button
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioId);
+        conjunctionText = radioButton.getText().toString();
+    }
     private void focusOnView(){
         new Handler().post(new Runnable() {
             @Override
@@ -85,8 +98,8 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
         editor.putString("teacherDescriptionText", descriptionText);
-        Spinner conjunction = findViewById(id.conjunction_spinner2);
-        String conjunctionText = conjunction.getSelectedItem().toString();
+//        Spinner conjunction = findViewById(id.conjunction_spinner2);
+//        String conjunctionText = conjunction.getSelectedItem().toString();
         editor.putString("teacherConjunction", conjunctionText);
         editor.apply();
         Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);

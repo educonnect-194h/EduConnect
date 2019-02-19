@@ -172,6 +172,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:max="7"
+                    android:progress="7"
                     android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:thumb="@drawable/tickbar" />
             </LinearLayout>
@@ -179,20 +180,71 @@
 
 
             <!-- expanding words spinner -->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="20dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<Spinner-->
+                    <!--android:id="@+id/conjunction_spinner"-->
+                    <!--android:layout_width="155dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:spinnerMode="dropdown" />-->
+
+
+            <!--</LinearLayout>-->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_margin="20dp">
 
-                <Spinner
-                    android:id="@+id/conjunction_spinner"
-                    android:layout_width="155dp"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:spinnerMode="dropdown" />
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center" >
 
+                    <RadioButton
+                        android:id="@+id/radio_because"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:padding="10dp"
+                        android:background="@drawable/radio_button"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:onClick="checkButton"
+                        android:text="because"
+                        android:textAlignment="center"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_but"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="46dp"
+                        android:padding="10dp"
+                        android:background="@drawable/radio_button"
+                        android:button="@android:color/transparent"
+                        android:onClick="checkButton"
+                        android:text="but"
+                        android:textAlignment="center"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_and"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="46dp"
+                        android:padding="10dp"
+                        android:background="@drawable/radio_button"
+                        android:button="@android:color/transparent"
+                        android:onClick="checkButton"
+                        android:text="and"
+                        android:textAlignment="center"/>
+                </RadioGroup>
 
             </LinearLayout>
 

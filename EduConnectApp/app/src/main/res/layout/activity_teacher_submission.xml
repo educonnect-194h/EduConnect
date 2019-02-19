@@ -293,20 +293,71 @@
                 </LinearLayout>
 
                 <!-- expanding words spinner -->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_margin="20dp">-->
+
+                        <!--<Spinner-->
+                            <!--android:id="@+id/conjunction_spinner2"-->
+                            <!--android:layout_width="155dp"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:background="@android:drawable/btn_dropdown"-->
+                            <!--android:spinnerMode="dropdown"-->
+                            <!--/>-->
+                <!--</LinearLayout>-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_margin="20dp">
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center" >
 
-                        <Spinner
-                            android:id="@+id/conjunction_spinner2"
-                            android:layout_width="155dp"
-                            android:layout_height="40dp"
-                            android:background="@android:drawable/btn_dropdown"
-                            android:spinnerMode="dropdown"
-                            />
+                                <RadioButton
+                                    android:id="@+id/radio_because"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/radio_button"
+                                    android:button="@android:color/transparent"
+                                    android:checked="true"
+                                    android:onClick="checkButton"
+                                    android:text="because"
+                                    android:textAlignment="center"/>
+
+                                <RadioButton
+                                    android:id="@+id/radio_but"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="46dp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/radio_button"
+                                    android:button="@android:color/transparent"
+                                    android:onClick="checkButton"
+                                    android:text="but"
+                                    android:textAlignment="center"/>
+
+                                <RadioButton
+                                    android:id="@+id/radio_and"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="46dp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/radio_button"
+                                    android:button="@android:color/transparent"
+                                    android:onClick="checkButton"
+                                    android:text="and"
+                                    android:textAlignment="center"/>
+                        </RadioGroup>
+
                 </LinearLayout>
+
 
                 <!-- text response - expand answer -->
                 <EditText
