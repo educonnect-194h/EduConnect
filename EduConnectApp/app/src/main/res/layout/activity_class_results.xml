@@ -90,79 +90,14 @@
             android:paddingBottom="10dp" />
 
 
-        <!-- data display options -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_margin="20dp">
-
-            <!-- pie chart button -->
-            <Button
-                android:id="@+id/pieChartButton"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:background="@drawable/data_option_chosen"
-                android:text="Pie Chart"
-                android:fontFamily="@font/avenir"
-                android:layout_marginRight="1dp"
-                android:textSize="12dp"
-                android:onClick="onPieClick"/>
-
-            <!-- histogram button -->
-            <Button
-                android:id="@+id/histogramButton"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:background="@drawable/data_option"
-                android:text="Histogram"
-                android:fontFamily="@font/avenir"
-                android:layout_marginRight="1dp"
-                android:textSize="12dp"
-                android:onClick="onHistogramClick"/>
-
-            <!-- box plot button -->
-            <Button
-                android:id="@+id/boxPlotButton"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:background="@drawable/data_option"
-                android:text="Box Plot"
-                android:fontFamily="@font/avenir"
-                android:textSize="12dp"
-                android:onClick="onBoxPlotClick"/>
-        </LinearLayout>
-
         <!-- Pie Chart -->
         <ImageView
             android:id="@+id/piechart"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/pie_chart"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:visibility="gone"/>
-
-        <!-- Histogram -->
-        <ImageView
-            android:id="@+id/histogram"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:src="@drawable/histogram"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:visibility="gone"/>
-
-        <!-- Box Plot -->
-        <ImageView
-            android:id="@+id/boxplot"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:src="@drawable/boxplot"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:visibility="visible"/>
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_margin="30dp"
+            android:src="@drawable/graph"
+            android:layout_gravity="center"/>
 
         <!-- details section -->
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
