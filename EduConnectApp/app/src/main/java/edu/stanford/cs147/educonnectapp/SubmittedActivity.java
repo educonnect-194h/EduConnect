@@ -37,11 +37,16 @@ public class SubmittedActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
             teacherEmoji.setImageBitmap(bitmap);
         }
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onBackToDashClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
         myIntent.putExtra("Submitted", true);
+        TextView header = findViewById(R.id.header);
+        myIntent.putExtra("header", header.getText());
         startActivity(myIntent);
     }
 }

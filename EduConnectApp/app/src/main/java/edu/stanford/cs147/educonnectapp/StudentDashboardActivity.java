@@ -65,6 +65,8 @@ public class StudentDashboardActivity extends AppCompatActivity {
 
     public void onFeelingsClick(View v){
         Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+        TextView header = findViewById(R.id.header);
+        myIntent.putExtra("header", header.getText());
         startActivity(myIntent);
     }
 
