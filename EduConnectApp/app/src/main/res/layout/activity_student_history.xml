@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,31 +59,31 @@
             android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/statusBar"
-            android:layout_gravity="right"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="130dp"
             android:fontFamily="@font/avenir"
             android:text="Jailene Miranda"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textColor="@color/background"
+            android:textSize="18dp" />
 
         <!-- Student History section -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="432dp"
-            android:background="@drawable/class_section"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="450dp"
+            android:background="@drawable/emoji_calendar"
+            android:orientation="vertical"
+            android:paddingTop="50dp">
 
             <!-- student info -->
 
             <!-- action buttons -->
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="334dp"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                app:srcCompat="@drawable/studenthistorygraph" />
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="334dp"-->
+            <!--android:paddingTop="@dimen/activity_horizontal_margin"-->
+            <!--app:srcCompat="@drawable/emoji_calendar" />-->
         </LinearLayout>
 
 
@@ -109,155 +109,151 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginRight="280dp"
         android:layout_marginBottom="8dp"
         android:onClick="onGraphButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <!-- Non functioning Hint button -->
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="onGraphButtonClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="onGraphButtonClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="onGraphButtonClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325"
-        app:srcCompat="@drawable/round_graph_button" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="onGraphButtonClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266"
-        app:srcCompat="@drawable/round_graph_button" />
+        app:layout_constraintVertical_bias="0.274"
+        app:srcCompat="@drawable/round_graph_button"/>
 
     <TextView
-        android:layout_width="358dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:id="@+id/text3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginRight="280dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/avenir"
-        android:gravity="bottom"
-        android:padding="30dp"
-        android:text="Tap the        to see more details for that time."
-        android:textSize="14dp"
+        android:text="4"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:onClick="onGraphButtonClick"
+        android:textColor="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.274"
+        app:srcCompat="@drawable/round_graph_button"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView8"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.133"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.405"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
+    <!-- Non functioning Hint button -->
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView9"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.259"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.91"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView4"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="onGraphButtonClick"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.443"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.405"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView5"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="onGraphButtonClick"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.656"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.529"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView6"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="onGraphButtonClick"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.719"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.325"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView7"-->
+        <!--android:layout_width="14dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="onGraphButtonClick"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.939"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.266"-->
+        <!--app:srcCompat="@drawable/round_graph_button" />-->
+
 
 </android.support.constraint.ConstraintLayout>

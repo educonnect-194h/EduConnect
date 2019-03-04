@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@color/background">
+        android:background="@color/colorPrimaryDark">
 
 
         <!-- Status Bar Label -->
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="March 28, 2018"
+            android:text="March 4, 2019"
             android:textSize="25dp"
             android:textColor="@color/darkGray"
             android:fontFamily="@font/avenir"
@@ -51,15 +51,15 @@
             android:text="Jailene was feeling..."
             android:textSize="18dp"
             android:fontFamily="@font/avenir"
-            android:layout_marginLeft="20dp"
+            android:gravity="center"
             android:layout_marginBottom="20dp"/>
 
         <!-- teacher emoji -->
         <ImageView
             android:id="@+id/studentEmoji"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/very_sad_emoji_icon_png" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sad" />
 
         <!-- conjunction... -->
         <TextView
@@ -69,8 +69,10 @@
             android:text="but..."
             android:textSize="18dp"
             android:fontFamily="@font/avenir"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="20dp"/>
+
 
         <!-- explanation -->
         <TextView
@@ -87,15 +89,15 @@
         <!-- Return to Dashboard -->
         <RelativeLayout
             android:layout_width="190dp"
-            android:layout_height="45dp">
+            android:layout_height="55dp">
 
             <ImageButton
                 android:id="@+id/btnBackToDashboard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/dashboard_button_available"
+                android:layout_height="250dp"
+                android:background="@drawable/rounded_rectangle_white"
                 android:src="@drawable/back_arrow"
-                android:tint="@color/background"
+                android:tint="@color/colorPrimaryDark"
                 android:scaleType="fitStart"
                 android:paddingVertical="12dp"
                 android:paddingLeft="10dp"
@@ -106,9 +108,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Return to Graph"
-                android:textColor="@color/background"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_marginLeft="50dp"
                 android:layout_centerVertical="true"
+                android:textSize="18dp"
+                android:textStyle="bold"
                 android:fontFamily="@font/avenir"/>
 
         </RelativeLayout>
