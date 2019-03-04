@@ -16,10 +16,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,24 +30,46 @@ public class LoginActivity extends AppCompatActivity {
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
 
+    String logins[][] = {{"t", "tt"},
+                        {"s", "ss"},};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_login);
-        Button studentLogin = findViewById(R.id.loginButtonStudent);
-        studentLogin.setOnClickListener(new View.OnClickListener() {
+        //Button studentLogin = findViewById(R.id.loginButtonStudent);
+        /*studentLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
             }
-        });
+        });*/
         description = findViewById(R.id.descriptionEt);
     }
 
     public void onTeacherLoginClick(View v){
         Intent myIntent = new Intent(getBaseContext(), TeacherClassListAcitivty.class);
         startActivity(myIntent);
+    }
+
+    public void onLoginClick(View v) {
+        EditText usernameEt = findViewById(R.id.usernameField);
+        EditText passwordEt = findViewById(R.id.passwordField);
+        String username = usernameEt.getText().toString();
+        String password = passwordEt.getText().toString();
+
+        if (username.equals(logins[0][0]) && password.equals(logins[0][1])) {
+            Intent myIntent = new Intent(getBaseContext(), TeacherClassListAcitivty.class);
+            startActivity(myIntent);
+        } else if (username.equals(logins[1][0]) && password.equals(logins[1][1])) {
+            Intent myIntent = new Intent(getBaseContext(), ClassList.class);
+            startActivity(myIntent);
+        } else {
+            Toast.makeText(this, "Username or Password incorrect.", Toast.LENGTH_SHORT).show();
+            usernameEt.setText("");
+            passwordEt.setText("");
+        }
     }
 
     // student period one click
@@ -113,12 +137,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onFeelingsClick(View v) {
-        Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), EmojiSelection.class);
         startActivity(myIntent);
     }
 
     public void onTeacherFeelingsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherSubmissionActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), TeacherEmojiSelection.class);
         startActivity(myIntent);
     }
 
@@ -186,7 +210,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-
+/*
     public void login() {
         EditText username= findViewById(R.id.usernameField);
         EditText password= findViewById(R.id.passwordField);
@@ -200,7 +224,7 @@ public class LoginActivity extends AppCompatActivity {
         } else{
             setContentView(R.layout.activity_class_list);
         }
-    }
+    }*/
 
 
     public void onEmojiClick(View v){
@@ -321,6 +345,20 @@ public class LoginActivity extends AppCompatActivity {
     public void studentYourHistoryClick(View v){
         Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
         startActivity(myIntent);
+    }
+
+    public void onNextButtonClick(View v){
+        Intent nextPage = new Intent(getBaseContext(), SubmissionActivity.class);
+        TextView header = findViewById(R.id.header);
+        nextPage.putExtra("header", header.getText());
+        startActivity(nextPage);
+    }
+
+    public void onNextButtonTeacherClick(View v){
+        Intent nextPage = new Intent(getBaseContext(), SubmissionActivity.class);
+        TextView header = findViewById(R.id.header);
+        nextPage.putExtra("header", header.getText());
+        startActivity(nextPage);
     }
 
 }

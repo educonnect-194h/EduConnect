@@ -84,7 +84,7 @@ public class TeacherDashboardActivity extends AppCompatActivity {
     }
 
     public void onTeacherFeelingsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherSubmissionActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), TeacherEmojiSelection.class);
         TextView header = findViewById(R.id.header);
         myIntent.putExtra("header", header.getText());
         startActivity(myIntent);

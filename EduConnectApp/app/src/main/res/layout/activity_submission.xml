@@ -18,9 +18,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="660dp"
+            android:layout_height="750dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/background"
+            android:background="@color/colorPrimaryDark"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical"
@@ -55,15 +55,16 @@
 
             <!--Today I feel-->
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/todayIFeel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="18dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/avenir"
                 android:gravity="center"
                 android:text="Today, I feel..."
-                android:textColor="@color/darkGray"
-                android:textSize="25dp" />
+                android:textColor="@color/background"
+                android:textSize="28dp" />
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -73,108 +74,15 @@
 
                 <!--big emoji-->
                 <ImageView
-                    android:id="@+id/today_emoji"
+                    android:id="@+id/todayStudentEmoji"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:background="@color/background"
                     android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimaryDark"
                     android:padding="7dp"
-                    android:src="@drawable/feisty"/>
-
-                <!--emoji lists-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <!-- very angry emoji -->
-                    <ImageView
-                        android:id="@+id/angry"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/angry" />
-
-                    <!-- sick emoji -->
-                    <ImageView
-                        android:id="@+id/sick"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/sick" />
-
-                    <!-- sad emoji -->
-                    <ImageView
-                        android:id="@+id/sad"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/sad" />
-
-                    <!-- sleepy emoji -->
-                    <ImageView
-                        android:id="@+id/sleepy"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/sleepy" />
-
-                    <!-- neutral face emoji -->
-                    <ImageView
-                        android:id="@+id/neutral"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/neutral" />
-
-                    <!-- sunglasses emoji -->
-                    <ImageView
-                        android:id="@+id/sunglasses"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/sunglasses" />
-
-                    <!-- grinning face emoji -->
-                    <ImageView
-                        android:id="@+id/grinning"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/grinning" />
-
-                    <!-- feisty emoji -->
-                    <ImageView
-                        android:id="@+id/feisty"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:background="@color/background"
-                        android:padding="7dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/feisty" />
-                </LinearLayout>
+                    android:src="@drawable/feisty" />
 
 
-                <SeekBar
-                    android:id="@+id/emojiBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:max="7"
-                    android:progress="7"
-                    android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:thumb="@drawable/tickbar" />
             </LinearLayout>
 
 
@@ -211,7 +119,7 @@
 
                     <RadioButton
                         android:id="@+id/radio_because"
-                        android:layout_width="80dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:background="@drawable/radio_button"
@@ -219,31 +127,34 @@
                         android:checked="true"
                         android:onClick="checkButton"
                         android:text="because"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
 
                     <RadioButton
                         android:id="@+id/radio_but"
-                        android:layout_width="80dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="20dp"
                         android:padding="10dp"
                         android:background="@drawable/radio_button"
                         android:button="@android:color/transparent"
                         android:onClick="checkButton"
                         android:text="but"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
 
                     <RadioButton
                         android:id="@+id/radio_and"
-                        android:layout_width="80dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="20dp"
                         android:padding="10dp"
                         android:background="@drawable/radio_button"
                         android:button="@android:color/transparent"
                         android:onClick="checkButton"
                         android:text="and"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
                 </RadioGroup>
 
             </LinearLayout>
@@ -251,8 +162,8 @@
             <!-- text response - expand answer -->
             <EditText
                 android:id="@+id/descriptionEt"
-                android:layout_width="340dp"
-                android:layout_height="130dp"
+                android:layout_width="350dp"
+                android:layout_height="160dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_text_background"
                 android:ems="10"
@@ -268,16 +179,17 @@
 
             <!-- submit button -->
             <Button
-                android:id="@+id/submitBtn"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
+                android:id="@+id/nextBtn"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="40dp"
-                android:background="@drawable/dashboard_button_available"
+                android:background="@drawable/rounded_rectangle_white"
                 android:fontFamily="@font/avenir"
                 android:onClick="onSubmitClick"
                 android:text="submit"
-                android:textColor="@color/background" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="23dp"/>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
