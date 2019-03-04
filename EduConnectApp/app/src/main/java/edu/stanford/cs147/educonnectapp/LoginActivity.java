@@ -113,12 +113,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onFeelingsClick(View v) {
-        Intent myIntent = new Intent(getBaseContext(), SubmissionActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), EmojiSelection.class);
         startActivity(myIntent);
     }
 
     public void onTeacherFeelingsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherSubmissionActivity.class);
+        Intent myIntent = new Intent(getBaseContext(), TeacherEmojiSelection.class);
         startActivity(myIntent);
     }
 
