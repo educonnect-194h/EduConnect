@@ -24,6 +24,9 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         ImageButton messagesBtn = findViewById(R.id.messagesButton2);
         messagesBtn.setClickable(false);
 
+        ImageButton flaggedBtn = findViewById(R.id.redFlags);
+        flaggedBtn.setClickable(false);
+
         ImageButton classResultsBtn = findViewById(R.id.classResultsBtn);
         classResultsBtn.setClickable(false);
 
@@ -47,6 +50,14 @@ public class TeacherDashboardActivity extends AppCompatActivity {
             classResultsBtn.setColorFilter(getResources().getColor(R.color.colorPrimary));
             ImageView resultsArrow = findViewById(R.id.resultsArrow);
             resultsArrow.setVisibility(View.VISIBLE);
+
+            TextView flagged = findViewById(R.id.flaggedStudentsText);
+            flagged.setTextColor(getResources().getColor(R.color.colorPrimary));
+            flagged.setTypeface(null, Typeface.BOLD);
+            flaggedBtn.setClickable(true);
+            flaggedBtn.setColorFilter(getResources().getColor(R.color.colorPrimary));
+            ImageView flaggedArrow = findViewById(R.id.flaggedStudentsArrow);
+            flaggedArrow.setVisibility(View.VISIBLE);
 
             TextView messages = findViewById(R.id.messagesText);
             messages.setTextColor(getResources().getColor(R.color.colorPrimary));
@@ -98,6 +109,14 @@ public class TeacherDashboardActivity extends AppCompatActivity {
         myIntent.putExtra("header", header.getText());
         startActivity(myIntent);
     }
+
+    public void onRedFlagsClick(View v){
+        Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
+        //TextView header = findViewById(R.id.header);
+        //header.setText(getIntent().getStringExtra("header"));
+        startActivity(myIntent);
+    }
+
     public void onRosterClick(View v){
         Intent myIntent = new Intent(getBaseContext(), RosterActivity.class);
         startActivity(myIntent);
