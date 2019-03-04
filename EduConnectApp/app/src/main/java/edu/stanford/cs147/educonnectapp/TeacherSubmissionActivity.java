@@ -40,14 +40,10 @@ import static edu.stanford.cs147.educonnectapp.R.*;
 public class TeacherSubmissionActivity extends AppCompatActivity {
     public static final String PREFERENCES_NAME = "SharedPrefsFile";
     EditText description;
-    SeekBar seekBar;
-    ScrollView SubmissionScrollView;
     RadioGroup radioGroup;
     RadioButton radioButton;
     String conjunctionText;
-    int[] emojiList = new int[]{R.drawable.angry, R.drawable.sick, R.drawable.sad,
-            R.drawable.sleepy, R.drawable.neutral, R.drawable.sunglasses, R.drawable.grinning,
-            R.drawable.feisty};
+    ImageView teacherEmoji;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,40 +54,19 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
 
         TextView header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
-        seekBar = findViewById(R.id.teacherEmojiBar);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int curr_i;
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                curr_i = i;
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                Drawable d = getResources().getDrawable(emojiList[curr_i]);
-                ImageView today = findViewById(id.today_emoji);
-                today.setImageDrawable(d);
-
-                Bitmap bitmap = ((BitmapDrawable) d).getBitmap();
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                byte[] b = baos.toByteArray();
-
-                String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
-
-                SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
-                editor.putString("emojiId", encodedImage);
-                editor.apply();
-            }
-        });
 
         header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
+
+        SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+        String previouslyEncodedImage = prefs.getString("emojiId", "");
+
+        if( !previouslyEncodedImage.equalsIgnoreCase("") ){
+            teacherEmoji = findViewById(id.todayTeacherEmoji);
+            byte[] b = Base64.decode(previouslyEncodedImage, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+            teacherEmoji.setImageBitmap(bitmap);
+        }
     }
 
     public void checkButton(View v){
@@ -99,14 +74,6 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
         conjunctionText = radioButton.getText().toString();
-    }
-    private void focusOnView(){
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                SubmissionScrollView.scrollTo(0, description.getBottom());
-            }
-        });
     }
 
     public void onTeacherSubmitClick(View v){

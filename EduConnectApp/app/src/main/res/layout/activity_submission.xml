@@ -77,10 +77,10 @@
                     android:id="@+id/todayStudentEmoji"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:background="@color/colorPrimaryDark"
                     android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimaryDark"
                     android:padding="7dp"
-                    android:src="@drawable/feisty"/>
+                    android:src="@drawable/feisty" />
 
 
             </LinearLayout>

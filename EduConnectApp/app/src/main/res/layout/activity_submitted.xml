@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@color/background">
+        android:background="@color/colorPrimaryDark">
 
         <!-- store class title -->
         <TextView
@@ -65,10 +65,10 @@
         <!-- teacher emoji -->
         <ImageView
             android:id="@+id/teacherEmoji"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginRight="2dp"
-            android:src="@drawable/very_sad_emoji_icon_png" />
+            android:src="@drawable/sad" />
 
         <!-- conjunction... -->
         <TextView
@@ -95,16 +95,16 @@
 
         <!-- Return to Dashboard -->
         <RelativeLayout
-            android:layout_width="190dp"
-            android:layout_height="45dp">
+            android:layout_width="170dp"
+            android:layout_height="55dp">
 
             <ImageButton
                 android:id="@+id/btnBackToDashboard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/dashboard_button_available"
+                android:layout_height="250dp"
+                android:background="@drawable/rounded_rectangle_white"
                 android:src="@drawable/back_arrow"
-                android:tint="@color/background"
+                android:tint="@color/colorPrimaryDark"
                 android:scaleType="fitStart"
                 android:paddingVertical="12dp"
                 android:paddingLeft="10dp"
@@ -112,12 +112,15 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
                 android:text="Return to Dashboard"
-                android:textColor="@color/background"
-                android:layout_marginLeft="45dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_marginLeft="25dp"
                 android:layout_centerVertical="true"
+                android:textStyle="bold"
                 android:fontFamily="@font/avenir"/>
 
         </RelativeLayout>
