@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
@@ -63,29 +63,32 @@
 
             <!-- Return to Dashboard-->
             <RelativeLayout
-                android:layout_width="190dp"
-                android:layout_height="45dp">
+                android:layout_width="170dp"
+                android:layout_height="55dp">
 
                 <ImageButton
                     android:id="@+id/btnBackToDashboard2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/dashboard_button_available"
+                    android:background="@drawable/rounded_rectangle_white"
                     android:onClick="onBackToDashClick"
                     android:paddingVertical="12dp"
                     android:paddingLeft="10dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/back_arrow"
-                    android:tint="@color/background" />
+                    android:tint="@color/colorPrimaryDark" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="45dp"
-                    android:fontFamily="@font/avenir"
+                    android:layout_width="300dp"
+                    android:layout_height="250dp"
                     android:text="Return to Dashboard"
-                    android:textColor="@color/background" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/avenir"/>
 
             </RelativeLayout>
 

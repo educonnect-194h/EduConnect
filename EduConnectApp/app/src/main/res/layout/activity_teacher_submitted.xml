@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
@@ -58,29 +58,29 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/avenir"
             android:text="Your teacher is feeling..."
-            android:textSize="18dp" />
+            android:gravity="center"
+            android:textSize="20dp" />
 
         <!-- teacher emoji -->
         <ImageView
             android:id="@+id/teacherEmoji"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/very_sad_emoji_icon_png" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sad" />
 
         <!-- conjunction... -->
         <TextView
             android:id="@+id/teacherSpinner"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/avenir"
             android:text="because"
-            android:textSize="18dp" />
+            android:gravity="center"
+            android:textSize="20dp" />
 
         <!-- explanation -->
         <TextView
@@ -110,12 +110,12 @@
                     android:id="@+id/btnEditResponse"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/dashboard_button_available"
+                    android:background="@drawable/rounded_rectangle_white"
                     android:paddingVertical="12dp"
                     android:paddingLeft="11dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/edit"
-                    android:tint="@color/background" />
+                    android:tint="@color/colorPrimaryDark" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,8 +124,10 @@
                     android:layout_marginLeft="45dp"
                     android:fontFamily="@font/avenir"
                     android:text="Edit Response"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:onClick="onEditResponse"
-                    android:textColor="@color/background" />
+                    android:textColor="@color/colorPrimaryDark" />
             </RelativeLayout>
 
             <!-- Confirm Submission and Return to Dashboard-->
@@ -137,10 +139,12 @@
                     android:id="@+id/btnFinalSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/dashboard_button_available"
+                    android:background="@drawable/rounded_rectangle_green"
                     android:fontFamily="@font/avenir"
                     android:textAllCaps="false"
                     android:text="Confirm Submission"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:onClick="onFinalSubmit"
                     android:textColor="@color/background" />
 

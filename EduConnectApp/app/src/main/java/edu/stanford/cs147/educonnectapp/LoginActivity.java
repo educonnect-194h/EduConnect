@@ -354,4 +354,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(nextPage);
     }
 
+    public void onNextButtonTeacherClick(View v){
+        Intent nextPage = new Intent(getBaseContext(), SubmissionActivity.class);
+        TextView header = findViewById(R.id.header);
+        nextPage.putExtra("header", header.getText());
+        startActivity(nextPage);
+    }
+
 }
