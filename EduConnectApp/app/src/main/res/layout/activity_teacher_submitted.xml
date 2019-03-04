@@ -79,7 +79,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/avenir"
-            android:text="but..."
+            android:text="because"
             android:textSize="18dp" />
 
         <!-- explanation -->
