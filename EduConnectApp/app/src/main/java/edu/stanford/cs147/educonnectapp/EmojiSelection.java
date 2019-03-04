@@ -25,6 +25,9 @@ public class EmojiSelection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emoji_selection);
+
+        TextView header = findViewById(R.id.header);
+        header.setText(getIntent().getStringExtra("header"));
     }
 
     public void onEmojiClick(View v){
