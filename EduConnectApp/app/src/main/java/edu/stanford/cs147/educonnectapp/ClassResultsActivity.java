@@ -1,20 +1,23 @@
 package edu.stanford.cs147.educonnectapp;
 
 import android.content.Intent;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Button;
+
+
 
 
 import java.util.Calendar;
 
 public class ClassResultsActivity extends AppCompatActivity {
+    private BottomSheetBehavior mBottomSheetBehavior;
 
     private String[] months = {"Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +48,16 @@ public class ClassResultsActivity extends AppCompatActivity {
 
         TextView header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
+
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+
     }
 
-    public void onRedFlagsClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), RedFlagsActivity.class);
-        //TextView header = findViewById(R.id.header);
-        //header.setText(getIntent().getStringExtra("header"));
-        startActivity(myIntent);
-    }
 
     public void goToCalendar(View v){
         Intent myIntent = new Intent(getBaseContext(), PastDataActivity.class);
         startActivity(myIntent);
     }
 
-    public void onMoreDetailsClick(View v){
-        TextView date = findViewById(R.id.date);
-        Intent myIntent = new Intent(getBaseContext(), DataBreakdownActivity.class);
-        myIntent.putExtra("date", date.getText());
-        startActivity(myIntent);
-    }
 }
