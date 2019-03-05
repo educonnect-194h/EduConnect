@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "538929401230",
+    "firebase_url": "https://tellus-12325.firebaseio.com",
+    "project_id": "tellus-12325",
+    "storage_bucket": "tellus-12325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538929401230:android:770ae927182c2f90",
+        "android_client_info": {
+          "package_name": "edu.stanford.cs147.educonnectapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538929401230-mj00cmaue4oevcen9uuqthh1bmtcv4e4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.stanford.cs147.educonnectapp",
+            "certificate_hash": "99d8f71d4b8a4275b199eb0da254a143b4222a29"
+          }
+        },
+        {
+          "client_id": "538929401230-65ocnkockm6vjeaa9cc12mn6pupbaa7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCVlIlW2Fj-L0PZhVSpW6or3QDr73tGOg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538929401230-65ocnkockm6vjeaa9cc12mn6pupbaa7c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
