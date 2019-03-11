@@ -32,7 +32,7 @@ public class TeacherSubmittedActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
         String restoredText = prefs.getString("teacherDescriptionText", "I'm excited to play this game I made for the class today!");
         teacherResponse.setText(restoredText);
-        String restoredConjunction = prefs.getString("teacherConjunction", "but...");
+        String restoredConjunction = prefs.getString("teacherConjunction", "because...");
         teacherConjunction = findViewById(R.id.teacherSpinner);
         teacherConjunction.setText(restoredConjunction);
 

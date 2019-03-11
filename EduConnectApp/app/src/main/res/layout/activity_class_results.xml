@@ -41,13 +41,13 @@
                     android:id="@+id/pastDataButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="goToCalendar"
                     android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/calendar"
-                    android:tint="@color/background"
-                    android:background="@color/colorPrimaryDark"
-                    android:layout_gravity="center"
-                    android:onClick="goToCalendar"/>
+                    android:tint="@color/background" />
 
                 <TextView
                     android:layout_width="wrap_content"
