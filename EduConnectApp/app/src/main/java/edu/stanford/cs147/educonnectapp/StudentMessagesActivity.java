@@ -26,12 +26,13 @@ public class StudentMessagesActivity extends AppCompatActivity {
 
 
         mSenderName = findViewById(R.id.tvName2);
-        mSenderName.setText("Ms. Reyes");
+        mSenderName.setText("Ms. Miranda");
 
         messages = new ArrayList<>();
-        BaseMessage baseMessage1 = new BaseMessage("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
-        BaseMessage baseMessage2 = new BaseMessage("Ms. Reyes", "Hi, Jailene, I'm really sorry to hear that, please let me know how I can help and if you want to talk!", 12);
-        messages.add(baseMessage1);
+        //BaseMessage baseMessage1 = new BaseMessage("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
+        //BaseMessage baseMessage2 = new BaseMessage("Ms. Reyes", "Hi, Jailene, I'm really sorry to hear that, please let me know how I can help and if you want to talk!", 12);
+        BaseMessage baseMessage2 = new BaseMessage("Ms. Miranda", "Hi Na He, didn't see you in class. Are you ok?", 12);
+        //messages.add(baseMessage1);
         messages.add(baseMessage2);
 
 

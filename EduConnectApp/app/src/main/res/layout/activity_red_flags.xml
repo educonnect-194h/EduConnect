@@ -43,7 +43,7 @@
                 android:layout_below="@id/statusBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Flagged Students"
+                android:text="Student Alerts"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:textColor="@color/darkGray"
@@ -110,26 +110,28 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <!-- Hannah Leou -->
+            <!-- Na He Jeon -->
             <LinearLayout
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingRight="50dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/user_female"
-                    android:tint="@color/darkGray" />
+                    android:src="@drawable/nahetransparent"/>
 
                 <TextView
                     android:layout_width="100dp"
                     android:id="@+id/tvStudentName"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:fontFamily="@font/avenir"
-                    android:text="Jailene Miranda"
+                    android:text="Na He Jeon"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/darkGray" />
                 <!-- Action Buttons Layout -->
@@ -149,12 +151,12 @@
                             android:layout_height="50dp"
                             android:layout_gravity="start"
                             android:layout_marginRight="6dp"
-                            android:background="@drawable/dashboard_button_available"
+                            android:background="@color/background"
                             android:onClick="onMessageStudentClick"
                             android:padding="7dp"
                             android:scaleType="fitStart"
                             android:src="@drawable/messages"
-                            android:tint="@color/background" />
+                            android:tint="@color/colorPrimaryDark" />
 
                     </RelativeLayout>
 
@@ -168,11 +170,11 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="start"
-                            android:background="@drawable/dashboard_button_available"
+                            android:background="@color/background"
                             android:onClick="onSeeStudentHistoryClick"
                             android:scaleType="fitStart"
                             android:src="@drawable/history"
-                            android:tint="@color/background" />
+                            android:tint="@color/colorPrimaryDark" />
 
                     </RelativeLayout>
                 </LinearLayout>
@@ -181,25 +183,27 @@
 
             </LinearLayout>
 
-            <!-- Julia Wong -->
+            <!-- Sanura N'Jaka -->
             <LinearLayout
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="50dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/user_female"
-                    android:tint="@color/darkGray" />
+                    android:src="@drawable/sanuratransparent" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir"
-                    android:text="Julia Wong"
+                    android:text="Sanura N'Jaka"
+                    android:gravity="center"
                     android:textColor="@color/darkGray" />
 
                 <!-- Buttons Layout -->
@@ -219,12 +223,12 @@
                             android:layout_height="50dp"
                             android:layout_gravity="start"
                             android:layout_marginRight="6dp"
-                            android:background="@drawable/dashboard_button_available"
+                            android:background="@color/background"
                             android:onClick="onMessageStudentClick"
                             android:padding="7dp"
                             android:scaleType="fitStart"
                             android:src="@drawable/messages"
-                            android:tint="@color/background" />
+                            android:tint="@color/colorPrimaryDark" />
 
                     </RelativeLayout>
 
@@ -238,11 +242,11 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="start"
-                            android:background="@drawable/dashboard_button_available"
+                            android:background="@color/background"
                             android:onClick="onSeeStudentHistoryClick"
                             android:scaleType="fitStart"
                             android:src="@drawable/history"
-                            android:tint="@color/background" />
+                            android:tint="@color/colorPrimaryDark" />
 
                     </RelativeLayout>
                 </LinearLayout>
