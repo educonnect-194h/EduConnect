@@ -189,7 +189,8 @@
                 android:onClick="onSubmitClick"
                 android:text="submit"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="23dp"/>
+                android:textSize="23dp"
+                android:paddingBottom="10dp"/>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
