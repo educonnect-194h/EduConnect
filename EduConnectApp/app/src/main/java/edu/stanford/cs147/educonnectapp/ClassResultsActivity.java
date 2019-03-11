@@ -60,4 +60,20 @@ public class ClassResultsActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void onMessageStudentClick(View v) {
+        TextView name = findViewById(R.id.tvStudentName);
+
+        Intent i = new Intent(this, TeacherIndividualMessageActivity.class);
+        i.putExtra("senderName", name.getText());
+        i.putExtra("message", "Sending a red flag message......");
+
+        startActivity(i);
+    }
+
+    public void onSeeStudentHistoryClick(View v){
+        Intent intent = new Intent(getApplicationContext(), StudentHistoryActivity.class);
+        startActivity(intent);
+    }
+
+
 }

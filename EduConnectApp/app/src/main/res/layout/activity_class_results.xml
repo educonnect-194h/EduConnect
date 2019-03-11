@@ -124,7 +124,7 @@
             android:layout_margin="20dp"
             android:fontFamily="@font/avenir"
             android:gravity="center"
-            android:text="Swipe to view students who feel..."
+            android:text="Swipe up to view students who feel..."
             android:textColor="@color/darkGray"
             android:textSize="20dp"
             android:paddingBottom="20dp"/>
@@ -155,7 +155,7 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <!-- Hannah Leou -->
+            <!-- Na He Jeon -->
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="200dp"
@@ -166,19 +166,67 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/user_female"
-                    android:tint="@color/darkGray" />
+                    app:srcCompat="@drawable/nahetransparent"/>
 
                 <TextView
                     android:layout_width="100dp"
+                    android:id="@+id/tvStudentName"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir"
-                    android:text="Hannah Leou"
+                    android:text="Na He Jeon"
+                    android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/darkGray" />
+                <!-- Action Buttons Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <!-- SEND MESSAGE -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/sendMessage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:layout_marginRight="6dp"
+                            android:background="@color/background"
+                            android:onClick="onMessageStudentClick"
+                            android:padding="7dp"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/messages"
+                            android:tint="@color/colorPrimaryDark" />
+
+                    </RelativeLayout>
+
+                    <!-- STUDENT HISTORY -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/seeStudentHistory"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="start"
+                            android:background="@color/background"
+                            android:onClick="onSeeStudentHistoryClick"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/history"
+                            android:tint="@color/colorPrimaryDark" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
             </LinearLayout>
 
-            <!-- Julia Wong -->
+            <!-- Paulina Reyes -->
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="200dp"
@@ -186,19 +234,63 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/user_female"
-                    android:tint="@color/darkGray" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paulinatransparent"/>
 
-                <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir"
+                android:text="Paulina Reyes"
+                android:textColor="@color/darkGray" />
+
+            <!-- Buttons Layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <!-- SEND MESSAGE -->
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/avenir"
-                    android:text="Julia Wong"
-                    android:textColor="@color/darkGray" />
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/sendMessage2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:layout_marginRight="6dp"
+                        android:background="@color/background"
+                        android:onClick="onMessageStudentClick"
+                        android:padding="7dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/messages"
+                        android:tint="@color/colorPrimaryDark" />
+
+                </RelativeLayout>
+
+                <!-- STUDENT HISTORY -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/seeStudentHistory2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="start"
+                        android:background="@color/background"
+                        android:onClick="onSeeStudentHistoryClick"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/history"
+                        android:tint="@color/colorPrimaryDark" />
+
+                </RelativeLayout>
             </LinearLayout>
+        </LinearLayout>
 
         </GridLayout>
         </LinearLayout>

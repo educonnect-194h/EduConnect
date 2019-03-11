@@ -31,8 +31,7 @@ public class StudentDetailedResultsActivity extends AppCompatActivity {
             studentEmoji = findViewById(R.id.studentEmoji);
             byte[] b = Base64.decode(previouslyEncodedImage, Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
-            studentEmoji.setImageBitmap(bitmap);
-        }
+            studentEmoji.setImageBitmap(bitmap);      }
     }
 
     public void onBackToDashClick(View v){
