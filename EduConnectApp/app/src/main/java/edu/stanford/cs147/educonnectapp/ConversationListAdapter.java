@@ -72,7 +72,7 @@ public class ConversationListAdapter extends RecyclerView.Adapter {
 
             // TODO: Format the stored timestamp into a readable String using method.
             // timeText.setText(Utils.formatDateTime(message.getCreatedAt()));
-            timeText.setText("11:25am");
+            timeText.setText("11:21am");
 
             nameText.setText(convoPreview.getSenderName());
         }

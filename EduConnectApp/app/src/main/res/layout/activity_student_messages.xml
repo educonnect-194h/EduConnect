@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir"
-                android:text="Ms. Reyes"
+                android:text="Ms. Miranda"
                 android:textColor="#fff"
                 android:textSize="30dp"
                 android:textStyle="bold" />

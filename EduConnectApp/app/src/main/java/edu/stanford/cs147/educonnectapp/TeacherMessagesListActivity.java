@@ -26,10 +26,10 @@ public class TeacherMessagesListActivity extends AppCompatActivity {
         header.setText(getIntent().getStringExtra("header"));
 
         convoList = new ArrayList<>();
-        ConversationPreview convo1 = new ConversationPreview("Jailene Miranda", "Hi Ms. Reyes, I just wanted to let you know that I'm going to be quiet and down today in class because a family member passed away.", 12);
-        ConversationPreview convo2 = new ConversationPreview("Sanura N'Jaka", "I'm having a really hard time understanding this topic, math sucks.", 12);
+        ConversationPreview convo1 = new ConversationPreview("Na He Jeon", "Hi, Ms. Miranda, I am not feeling well today. *cough cough* I'm sick.", 12);
+        //ConversationPreview convo2 = new ConversationPreview("Sanura N'Jaka", "I'm having a really hard time understanding this topic, math sucks.", 12);
         convoList.add(convo1);
-        convoList.add(convo2);
+        //convoList.add(convo2);
 
         mConversationRecycler = findViewById(R.id.messagesRv);
         mConversationAdapter = new ConversationListAdapter(this, new ClickListener() {

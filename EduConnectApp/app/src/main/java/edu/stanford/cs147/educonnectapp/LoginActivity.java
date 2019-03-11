@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageButton oldSelectedEmoji;
 
     String logins[][] = {{"t", "tt"},
-                        {"s", "ss"},};
+                        {"s", "ss"}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

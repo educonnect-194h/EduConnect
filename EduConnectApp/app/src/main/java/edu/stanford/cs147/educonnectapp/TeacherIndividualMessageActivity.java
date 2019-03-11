@@ -58,7 +58,7 @@ public class TeacherIndividualMessageActivity extends AppCompatActivity {
         String responseString = responseEt.getText().toString();
         responseEt.setText("");
 
-        BaseMessage responseBm = new BaseMessage("Ms. Reyes", responseString, 12);
+        BaseMessage responseBm = new BaseMessage("Ms. Miranda", responseString, 12);
         messages.add(responseBm);
 
         mMessageAdapter.notifyItemInserted(messages.size() - 1);
