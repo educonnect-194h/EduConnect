@@ -12,6 +12,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
@@ -57,9 +58,13 @@ public class EmojiSelection extends AppCompatActivity {
     }
 
     public void onNextButtonClick(View v){
-        Intent nextPage = new Intent(getBaseContext(), SubmissionActivity.class);
-        TextView header = findViewById(R.id.header);
-        nextPage.putExtra("header", header.getText());
-        startActivity(nextPage);
+        if (emojiAlreadySelected) {
+            Intent nextPage = new Intent(getBaseContext(), SubmissionActivity.class);
+            TextView header = findViewById(R.id.header);
+            nextPage.putExtra("header", header.getText());
+            startActivity(nextPage);
+        } else {
+            Toast.makeText(this, "Please select an emoji.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -180,12 +180,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/class_section"
+                    android:onClick="goToCalendar"
                     android:paddingVertical="10dp"
                     android:paddingLeft="20dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/history"
-                    android:tint="@color/darkGray"
-                    android:onClick="studentYourHistoryClick"/>
+                    android:tint="@color/darkGray" />
 
                 <TextView
                     android:id="@+id/historyText"

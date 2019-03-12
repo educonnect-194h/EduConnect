@@ -80,9 +80,8 @@ public class StudentDashboardActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void studentYourHistoryClick(View v){
-        Intent myIntent = new Intent(getBaseContext(), StudentHistoryActivity.class);
+    public void goToCalendar(View v){
+        Intent myIntent = new Intent(getBaseContext(), PastDataActivity.class);
         startActivity(myIntent);
     }
-
 }
