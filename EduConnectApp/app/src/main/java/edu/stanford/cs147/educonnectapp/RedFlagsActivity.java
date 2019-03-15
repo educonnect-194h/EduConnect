@@ -31,4 +31,13 @@ public class RedFlagsActivity extends AppCompatActivity {
 
         startActivity(i);
     }
+
+    public void goToCalendar(View v){
+        TextView name = findViewById(R.id.tvStudentName);
+
+        Intent myIntent = new Intent(getBaseContext(), PastDataActivity.class);
+        myIntent.putExtra("studentName", name.getText());
+
+        startActivity(myIntent);
+    }
 }

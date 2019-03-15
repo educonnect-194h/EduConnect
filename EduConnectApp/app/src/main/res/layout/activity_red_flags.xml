@@ -171,7 +171,7 @@
                             android:layout_height="50dp"
                             android:layout_gravity="start"
                             android:background="@color/background"
-                            android:onClick="onSeeStudentHistoryClick"
+                            android:onClick="goToCalendar"
                             android:scaleType="fitStart"
                             android:src="@drawable/history"
                             android:tint="@color/colorPrimaryDark" />
@@ -243,7 +243,7 @@
                             android:layout_height="50dp"
                             android:layout_gravity="start"
                             android:background="@color/background"
-                            android:onClick="onSeeStudentHistoryClick"
+                            android:onClick="goToCalendar"
                             android:scaleType="fitStart"
                             android:src="@drawable/history"
                             android:tint="@color/colorPrimaryDark" />

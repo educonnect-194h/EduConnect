@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,12 +23,16 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 
-public class PastDataActivity extends AppCompatActivity {
+public class PastDataStudentActivity extends AppCompatActivity {
 
     public static final String PREFERENCES_NAME = "SharedPrefsFile";
 
     private String[] months = {"Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."};
-    private String today;
+    long todayLong;
+    private String todayString;
+    private int todaysMonth;
+    private int todaysDayOfMonth;
+    private int todaysYear;
     private int daySelected;
 
     ImageView emoji;
@@ -35,12 +40,13 @@ public class PastDataActivity extends AppCompatActivity {
     TextView dateTv;
     TextView mStudentName;
 
-    private LinkedHashMap<Drawable, String> submissionHistory = new LinkedHashMap<Drawable, String>() {};
+    private LinkedHashMap<Drawable, String> submissionHistory = new LinkedHashMap<Drawable, String>() {
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_past_data);
+        setContentView(R.layout.activity_past_data_student);
 
         Intent i = getIntent();
         String name = i.getExtras().getString("studentName");
@@ -80,40 +86,20 @@ public class PastDataActivity extends AppCompatActivity {
         submissionHistory.put(ResourcesCompat.getDrawable(getResources(), R.drawable.anxious, null), "I am very anxious");
         submissionHistory.put(ResourcesCompat.getDrawable(getResources(), R.drawable.feisty, null), "I am very excited");
 
-        CalendarView calendar = findViewById(R.id.calendarView);
-        calendar.setDate(Calendar.getInstance().getTimeInMillis(),false,true);
+        final CalendarView calendar = findViewById(R.id.calendarView);
+        todayLong = Calendar.getInstance().getTimeInMillis();
+        calendar.setDate(todayLong, false, true);
 
-        daySelected = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        today = months[Calendar.getInstance().get(Calendar.MONTH)] + " " + daySelected + ", " + Calendar.getInstance().get(Calendar.YEAR);
+        todaysMonth = Calendar.getInstance().get(Calendar.MONTH);
+        todaysDayOfMonth = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        todaysYear = Calendar.getInstance().get(Calendar.YEAR);
+        todayString = months[todaysMonth] + " " + todaysDayOfMonth + ", " + todaysYear;
+        daySelected = todaysDayOfMonth;
 
         dateTv = findViewById(R.id.showDateTv);
-        dateTv.setText("Showing Submission for " + today);
+        dateTv.setText("Showing Submission for " + todayString);
 
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView CalendarView, int year, int month, int dayOfMonth) {
-                daySelected = dayOfMonth;
-                emoji.setImageDrawable((new ArrayList<>(submissionHistory.keySet())).get(daySelected - 1));
-
-                submissionText = findViewById(R.id.submissionTv);
-                submissionText.setText((new ArrayList<>(submissionHistory.values())).get(daySelected - 1));
-
-                String date = months[month] + " " + dayOfMonth + ", "+ year ;
-                dateTv.setText("Showing Submission for " + date);
-
-/*              Intent intent = new Intent(getApplicationContext(), ClassResultsActivity.class);
-                intent.putExtra("date", date);
-                TextView title = findViewById(R.id.title);
-                intent.putExtra("header", title.getText());
-                if(date.equals(today)){
-                    intent.putExtra("current", true);
-                } else{
-                    intent.putExtra("current", false);
-                }
-                startActivity(intent);*/
-            }
-        });
-/*
+        /*
         SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
         String previouslyEncodedImage = prefs.getString("studentEmojiId", "");
         ImageView emoji = findViewById(R.id.datedEmoji);
@@ -126,10 +112,54 @@ public class PastDataActivity extends AppCompatActivity {
 
         submissionText = findViewById(R.id.submissionTv);
         submissionText.setText((new ArrayList<>(submissionHistory.values())).get(daySelected - 1));
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView CalendarView, int year, int month, int dayOfMonth) {
+                // check if the selected date is in the future
+                boolean inFuture = false;
+                if (year > todaysYear) {
+                    inFuture = true;
+                } else if (year == todaysYear) {
+                    if (month > todaysMonth) {
+                        inFuture = true;
+                    } else if (month == todaysMonth) {
+                        if (dayOfMonth > todaysDayOfMonth) {
+                            inFuture = true;
+                        }
+                    }
+                }
+
+                if (!inFuture) {
+                    daySelected = dayOfMonth;
+                    emoji.setImageDrawable((new ArrayList<>(submissionHistory.keySet())).get(daySelected - 1));
+
+                    submissionText = findViewById(R.id.submissionTv);
+                    submissionText.setText((new ArrayList<>(submissionHistory.values())).get(daySelected - 1));
+
+                    String date = months[month] + " " + dayOfMonth + ", " + year;
+                    dateTv.setText("Showing Submission for " + date);
+
+/*              Intent intent = new Intent(getApplicationContext(), ClassResultsActivity.class);
+                intent.putExtra("date", date);
+                TextView title = findViewById(R.id.title);
+                intent.putExtra("header", title.getText());
+                if(date.equals(today)){
+                    intent.putExtra("current", true);
+                } else{
+                    intent.putExtra("current", false);
+                }
+                startActivity(intent);*/
+                } else {
+                    Toast.makeText(getBaseContext(), "Please select either today's date or a date in the past.", Toast.LENGTH_SHORT).show();
+                    CalendarView.setDate(todayLong, false, true);
+                }
+            }
+        });
     }
 
-    public void backToDashboard(View v){
-        Intent myIntent = new Intent(getBaseContext(), TeacherDashboardActivity.class);
+    public void backToDashboard(View v) {
+        Intent myIntent = new Intent(getBaseContext(), StudentDashboardActivity.class);
         myIntent.putExtra("Submitted", true);
         startActivity(myIntent);
     }

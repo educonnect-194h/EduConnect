@@ -82,6 +82,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
 
     public void goToCalendar(View v){
         Intent myIntent = new Intent(getBaseContext(), PastDataActivity.class);
+        myIntent.putExtra("studentName", "Na He Jeon");
         startActivity(myIntent);
     }
 }
