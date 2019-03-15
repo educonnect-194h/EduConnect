@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherEmojiSelection"></activity>
+        <activity android:name=".TeacherEmojiSelection" />
         <activity android:name=".EmojiSelection" />
         <activity android:name=".TeacherConfirmedSubmission" />
         <activity
@@ -51,6 +51,8 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="6a662a43552ea19aded2d7ac6176d9668b419a96" />
+
+        <activity android:name=".PastDataStudentActivity"></activity>
     </application>
 
 </manifest>

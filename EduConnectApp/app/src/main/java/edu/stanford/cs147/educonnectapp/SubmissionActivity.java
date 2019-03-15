@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import static edu.stanford.cs147.educonnectapp.R.*;
@@ -32,7 +33,7 @@ public class SubmissionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_submission);
+        setContentView(R.layout.activity_submission);
         description = findViewById(R.id.descriptionEt);
         radioGroup = findViewById(R.id.radioGroup);
         SubmissionScrollView = findViewById(id.SubmissionScrollView);
@@ -69,13 +70,17 @@ public class SubmissionActivity extends AppCompatActivity {
     public void onSubmitClick(View v){
         // Description text needs to be passed to "StudentDetailedResultsActivity"
         String descriptionText = description.getText().toString().trim();
-        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
-        editor.putString("studentDescriptionText", descriptionText);
-      //  editor.putString("studentConjunction", conjunctionText);
-        editor.apply();
-        Intent nextPage = new Intent(getBaseContext(), SubmittedActivity.class);
-        TextView header = findViewById(R.id.header);
-        nextPage.putExtra("header", header.getText());
-        startActivity(nextPage);
+        if (descriptionText.equals("")) {
+            Toast.makeText(this, "Please elaborate more on how you're feeling.", Toast.LENGTH_SHORT).show();
+        } else {
+            SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
+            editor.putString("studentDescriptionText", descriptionText);
+            //  editor.putString("studentConjunction", conjunctionText);
+            editor.apply();
+            Intent nextPage = new Intent(getBaseContext(), SubmittedActivity.class);
+            TextView header = findViewById(R.id.header);
+            nextPage.putExtra("header", header.getText());
+            startActivity(nextPage);
+        }
     }
 }
