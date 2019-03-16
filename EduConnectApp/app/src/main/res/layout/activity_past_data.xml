@@ -133,7 +133,7 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="90dp"
                     android:scaleType="fitStart"
-                    android:src="@drawable/grinning_emoji_with_smiling_eyes" />
+                    android:src="@drawable/grinning" />
 
                 <TextView
                     android:id="@+id/submissionTv"

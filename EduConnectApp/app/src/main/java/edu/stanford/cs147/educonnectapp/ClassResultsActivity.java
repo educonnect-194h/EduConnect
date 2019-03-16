@@ -6,14 +6,18 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -25,6 +29,8 @@ public class ClassResultsActivity extends AppCompatActivity {
     private String[] months = {"Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."};
 
     PieChart pieChart;
+    TextView bottomText;
+    ImageView bigEmoji;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +62,16 @@ public class ClassResultsActivity extends AppCompatActivity {
         TextView header = findViewById(R.id.header);
         header.setText(getIntent().getStringExtra("header"));
 
-        View bottomSheet = findViewById(R.id.bottom_sheet);
+        final View bottomSheet = findViewById(R.id.bottom_sheet);
+        bigEmoji = findViewById(R.id.bigEmoji);
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
 
         // PIE CHART CREATION
         pieChart = (PieChart) findViewById(R.id.animatedpiechart);
-        pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
         pieChart.setDragDecelerationFrictionCoef(0.95f);
+        pieChart.getLegend().setEnabled(false);
 
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.WHITE);
@@ -73,20 +80,43 @@ public class ClassResultsActivity extends AppCompatActivity {
         pieChart.setCenterTextSize(20);
         pieChart.setCenterTextColor(R.color.colorPrimary);
 
+        bottomText = findViewById(R.id.bottomSheetText);
+
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                if (e == null){
+                    return;
+                }
+                pieChart.setDrawMarkers(true);
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                bottomText.setText("Students who feel ...");
+                //e.
+            }
+
+            @Override
+            public void onNothingSelected() {
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                bottomText = findViewById(R.id.bottomSheetText);
+                bottomText.setText("Click a section to view the student list!");
+            }
+        });
+        pieChart.setTouchEnabled(true);
+
         ArrayList<PieEntry> yValues = new ArrayList<>();
-        yValues.add(new PieEntry(38, "Cool"));
         yValues.add(new PieEntry(14, "Sick"));
+        yValues.add(new PieEntry(38, "Confident"));
         yValues.add(new PieEntry(14, "Jubilant"));
-        yValues.add(new PieEntry(34, "Nervous"));
+        yValues.add(new PieEntry(34, "Sleepy"));
 
         PieDataSet dataSet = new PieDataSet(yValues, "Emojis");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.PASTEL_COLORS);
+        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
 
         PieData data = new PieData(dataSet);
-        data.setValueTextSize(10f);
-        data.setValueTextColor(R.color.colorPrimary);
+        data.setValueTextSize(20f);
+        data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);
 
@@ -108,11 +138,5 @@ public class ClassResultsActivity extends AppCompatActivity {
 
         startActivity(i);
     }
-
-    public void onSeeStudentHistoryClick(View v){
-        Intent intent = new Intent(getApplicationContext(), StudentHistoryActivity.class);
-        startActivity(intent);
-    }
-
 
 }
