@@ -30,8 +30,17 @@ public class LoginActivity extends AppCompatActivity {
     Boolean emojiAlreadySelected = false;
     ImageButton oldSelectedEmoji;
 
-    String logins[][] = {{"t", "tt"},
-                        {"s", "ss"}};
+    String logins[][] = {{"jailene", "jailenem"},
+                        {"nahe", "nahej"}};
+    /*
+        for teacher:
+            username -- jailene
+            password -- jailenem
+
+        for student:
+            username -- nahe
+            password -- nahej
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -28,6 +28,7 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -48,7 +49,7 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_teacher_submission);
+        setContentView(R.layout.activity_teacher_submission);
         description = findViewById(R.id.teacherDescriptionEt);
         radioGroup = findViewById(R.id.radioGroup);
 
@@ -79,14 +80,18 @@ public class TeacherSubmissionActivity extends AppCompatActivity {
     public void onTeacherSubmitClick(View v){
         // Description text needs to be passed to "Submitted Activity"
         String descriptionText = description.getText().toString().trim();
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
-        editor.putString("teacherDescriptionText", descriptionText);
-        editor.putString("teacherConjunction", conjunctionText);
-        editor.apply();
-        Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);
-        TextView header = findViewById(R.id.header);
-        nextPage.putExtra("header", header.getText());
-        startActivity(nextPage);
+        if (descriptionText.equals("")) {
+            Toast.makeText(this, "Please elaborate more on how you're feeling.", Toast.LENGTH_SHORT).show();
+        } else {
+            SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE).edit();
+            editor.putString("teacherDescriptionText", descriptionText);
+            editor.putString("teacherConjunction", conjunctionText);
+            editor.apply();
+            Intent nextPage = new Intent(getApplicationContext(), TeacherSubmittedActivity.class);
+            TextView header = findViewById(R.id.header);
+            nextPage.putExtra("header", header.getText());
+            startActivity(nextPage);
+        }
     }
 }
